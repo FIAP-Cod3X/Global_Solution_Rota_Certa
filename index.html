@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configurações básicas do documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rota Certa - O GPS da Requalificação Profissional. Descubra seu caminho para uma nova carreira.">
+    
+    <!-- Título da página -->
+    <title>Rota Certa - O GPS da Requalificação Profissional</title>
+    
+    <!-- Link para as fontes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Link para os arquivos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index-style.css">
+</head>
+<body>
+    
+    <!-- ========== CABEÇALHO E NAVEGAÇÃO ========== -->
+    <header class="cabecalho">
+        <nav class="navegacao-principal">
+            <div class="container">
+                <!-- Logo da marca -->
+                <div class="logo">
+                    <a href="index.html" aria-label="RotaCerta - GPS da Requalificação Profissional">
+                        <i class="fas fa-route icone-logo"></i>
+                        <span class="texto-logo">
+                            <span class="texto-rota">Rota</span><span class="texto-certa">Certa</span>
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Botão do menu mobile (hambúrguer) -->
+                <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <span class="linha-menu"></span>
+                    <span class="linha-menu"></span>
+                    <span class="linha-menu"></span>
+                </button>
+                
+                <!-- Menu de navegação -->
+                <ul class="menu-navegacao" id="menuNavegacao">
+                    <li><a href="index.html" class="link-ativo">Início</a></li>
+                    <li><a href="pages/sobre.html">Sobre</a></li>
+                    <li><a href="pages/faq.html">Perguntas</a></li>
+                    <li><a href="pages/integrantes.html">Equipe</a></li>
+                    <li><a href="pages/contato.html">Contato</a></li>
+                </ul>
+                
+                <!-- Botão de ação principal -->
+                <a href="#diagnostico" class="botao-principal botao-cabecalho">Começar Agora</a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+    <main>
+        
+        <!-- SEÇÃO: Hero (Banner Principal) -->
+        <section class="secao-hero" id="inicio">
+            <div class="container">
+                <div class="conteudo-hero">
+                    <!-- Conteúdo centralizado com glassmorphism -->
+                    <div class="conteudo-hero-centralizado">
+                        <!-- Badge de alerta animado -->
+                        <div class="badge-alerta-hero">
+                            <i class="fas fa-exclamation-triangle icone-alerta-hero"></i>
+                            <span>Seu trabalho está em risco?</span>
+                        </div>
+                        
+                        <!-- Título principal com destaque -->
+                        <h1 class="titulo-hero-grande">
+                            O GPS da
+                            <span class="destaque-hero-laranja">Requalificação</span>
+                            <span class="destaque-hero-laranja">Profissional</span>
+                            resolve!
+                        </h1>
+                        
+                        <!-- Subtítulo impactante -->
+                        <p class="subtitulo-hero-impacto">
+                            <strong>Não espere ser substituído.</strong><br>
+                            Descubra sua rota personalizada para uma carreira
+                            à prova de futuro
+                        </p>
+                        
+                        <!-- Estatísticas em destaque -->
+                        <div class="stats-hero-destaque">
+                            <div class="stat-item-hero">
+                                <div class="stat-numero-hero">47%</div>
+                                <div class="stat-texto-hero">empregos em risco até 2030</div>
+                            </div>
+                            <div class="stat-separador"></div>
+                            <div class="stat-item-hero">
+                                <div class="stat-numero-hero">3M+</div>
+                                <div class="stat-texto-hero">brasileiros precisam se requalificar</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Botões de ação destacados -->
+                        <div class="acoes-hero-destacadas">
+                            <a href="#diagnostico" class="botao-hero-principal">
+                                <i class="fas fa-route"></i>
+                                Descobrir Minha Rota
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#como-funciona" class="botao-hero-outline">
+                                <i class="fas fa-play-circle"></i>
+                                Como Funciona
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO: O Problema -->
+        <section class="secao-problema" id="problema">
+            <div class="container">
+                <!-- Cabeçalho da seção -->
+                <div class="cabecalho-secao">
+                    <span class="icone-secao">🚨</span>
+                    <h2 class="titulo-secao">O Problema que Você Precisa Conhecer</h2>
+                    <p class="subtitulo-secao">
+                        A automação não é o futuro. Ela já está aqui, transformando o mercado de trabalho atual.
+                    </p>
+                </div>
+                
+                <!-- Grade de barreiras -->
+                <div class="grade-barreiras">
+                    <!-- Barreira 1 -->
+                    <article class="cartao-barreira">
+                        <div class="icone-barreira">😶‍🌫️</div>
+                        <h3 class="titulo-barreira">Desconhecimento</h3>
+                        <p class="texto-barreira">
+                            Muitos trabalhadores não sabem que sua função está ameaçada pela tecnologia.
+                        </p>
+                    </article>
+                    
+                    <!-- Barreira 2 -->
+                    <article class="cartao-barreira">
+                        <div class="icone-barreira">🤷</div>
+                        <h3 class="titulo-barreira">Paralisia</h3>
+                        <p class="texto-barreira">
+                            Mesmo sabendo do risco, não sabem para onde migrar ou que carreira seguir.
+                        </p>
+                    </article>
+                    
+                    <!-- Barreira 3 -->
+                    <article class="cartao-barreira">
+                        <div class="icone-barreira">🗺️</div>
+                        <h3 class="titulo-barreira">Falta de Roteiro</h3>
+                        <p class="texto-barreira">
+                            Não têm orientação clara sobre qual é o primeiro passo na transição de carreira.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO: Como Funciona -->
+        <section class="secao-como-funciona" id="como-funciona">
+            <div class="container">
+                <!-- Cabeçalho da seção -->
+                <div class="cabecalho-secao">
+                    <span class="icone-secao">🧭</span>
+                    <h2 class="titulo-secao">Como o GPS Funciona</h2>
+                    <p class="subtitulo-secao">
+                        Uma jornada guiada em 5 etapas simples
+                    </p>
+                </div>
+                
+                <!-- Navegação por Tabs -->
+                <div class="tabs-navegacao">
+                    <button class="tab-botao ativo" data-tab="1">
+                        <span class="tab-numero">1</span>
+                        <span class="tab-titulo">Diagnóstico</span>
+                    </button>
+                    <button class="tab-botao" data-tab="2">
+                        <span class="tab-numero">2</span>
+                        <span class="tab-titulo">Termômetro</span>
+                    </button>
+                    <button class="tab-botao" data-tab="3">
+                        <span class="tab-numero">3</span>
+                        <span class="tab-titulo">Rotas</span>
+                    </button>
+                    <button class="tab-botao" data-tab="4">
+                        <span class="tab-numero">4</span>
+                        <span class="tab-titulo">Aprendizado</span>
+                    </button>
+                    <button class="tab-botao" data-tab="5">
+                        <span class="tab-numero">5</span>
+                        <span class="tab-titulo">Comunidade</span>
+                    </button>
+                </div>
+                
+                <!-- Conteúdo das Tabs -->
+                <div class="tabs-conteudo">
+                    <!-- Tab 1: Diagnóstico -->
+                    <div class="tab-painel ativo" id="tab-1">
+                        <div class="painel-grid">
+                            <div class="painel-visual">
+                                <div class="icone-grande-tab"><i class="fas fa-clipboard-list"></i></div>
+                                <div class="badge-destaque">Rápido e Completo</div>
+                            </div>
+                            <div class="painel-texto">
+                                <h3 class="titulo-tab">Diagnóstico Completo</h3>
+                                <p class="descricao-tab">
+                                    Cadastro simples + <strong>Mapeamento de Potencial Humano</strong>. 
+                                    Identificamos suas soft skills que a máquina não substitui.
+                                </p>
+                                <ul class="lista-recursos-tab">
+                                    <li><i class="fas fa-check-circle"></i> Quiz de habilidades comportamentais</li>
+                                    <li><i class="fas fa-check-circle"></i> Análise de perfil técnico</li>
+                                    <li><i class="fas fa-check-circle"></i> Levantamento de tempo disponível</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab 2: Termômetro -->
+                    <div class="tab-painel" id="tab-2">
+                        <div class="painel-grid">
+                            <div class="painel-visual">
+                                <div class="icone-grande-tab"><i class="fas fa-temperature-high"></i></div>
+                                <div class="badge-destaque alerta">Visualização Clara</div>
+                            </div>
+                            <div class="painel-texto">
+                                <h3 class="titulo-tab">Termômetro de Risco</h3>
+                                <p class="descricao-tab">
+                                    Visualização clara sobre o risco da sua profissão atual, 
+                                    com explicação didática e sem alarmismo.
+                                </p>
+                                <ul class="lista-recursos-tab">
+                                    <li><i class="fas fa-chart-line"></i> Dados reais de mercado</li>
+                                    <li><i class="fas fa-robot"></i> Impacto da tecnologia explicado</li>
+                                    <li><i class="fas fa-clock"></i> Timeline de transformação do setor</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab 3: Rotas -->
+                    <div class="tab-painel" id="tab-3">
+                        <div class="painel-grid">
+                            <div class="painel-visual">
+                                <div class="icone-grande-tab"><i class="fas fa-bullseye"></i></div>
+                                <div class="badge-destaque sucesso">Personalizado</div>
+                            </div>
+                            <div class="painel-texto">
+                                <h3 class="titulo-tab">Rotas Inteligentes</h3>
+                                <p class="descricao-tab">
+                                    Sugestões baseadas no seu perfil técnico e comportamental. 
+                                    Uma <strong>Ponte de Habilidades</strong> totalmente acessível.
+                                </p>
+                                <div class="exemplos-rotas">
+                                    <div class="exemplo-item">
+                                        <i class="fas fa-briefcase"></i>
+                                        <strong>Organizado + Rotina</strong>
+                                        <i class="fas fa-arrow-right seta-rota"></i>
+                                        <span class="destino">Análise de Dados</span>
+                                    </div>
+                                    <div class="exemplo-item">
+                                        <i class="fas fa-comments"></i>
+                                        <strong>Comunicativo + Empático</strong>
+                                        <i class="fas fa-arrow-right seta-rota"></i>
+                                        <span class="destino">Customer Success</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab 4: Aprendizado -->
+                    <div class="tab-painel" id="tab-4">
+                        <div class="painel-grid">
+                            <div class="painel-visual">
+                                <div class="icone-grande-tab"><i class="fas fa-book-open"></i></div>
+                                <div class="badge-destaque">Micro-learning</div>
+                            </div>
+                            <div class="painel-texto">
+                                <h3 class="titulo-tab">Trilhas de Aprendizado</h3>
+                                <p class="descricao-tab">
+                                    <strong>Micro-learning</strong> de 5-15 min que cabe na sua rotina. 
+                                    Curadoria do melhor conteúdo gratuito da web.
+                                </p>
+                                <ul class="lista-recursos-tab">
+                                    <li><i class="fas fa-graduation-cap"></i> <strong>Módulo Zero:</strong> Aprender a aprender</li>
+                                    <li><i class="fas fa-video"></i> <strong>Módulos Técnicos:</strong> Vídeos e práticas</li>
+                                    <li><i class="fas fa-trophy"></i> <strong>Gamificação:</strong> Badges e certificados</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab 5: Comunidade -->
+                    <div class="tab-painel" id="tab-5">
+                        <div class="painel-grid">
+                            <div class="painel-visual">
+                                <div class="icone-grande-tab"><i class="fas fa-user-friends"></i></div>
+                                <div class="badge-destaque alerta">Juntos</div>
+                            </div>
+                            <div class="painel-texto">
+                                <h3 class="titulo-tab">Comunidade de Apoio</h3>
+                                <p class="descricao-tab">
+                                    Fóruns de pares onde você encontra gente na mesma situação. 
+                                    Combate à solidão do estudo online.
+                                </p>
+                                <ul class="lista-recursos-tab">
+                                    <li><i class="fas fa-users"></i> Grupos por área de transição</li>
+                                    <li><i class="fas fa-handshake"></i> Mentoria entre pares</li>
+                                    <li><i class="fas fa-star"></i> Histórias reais de sucesso</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO: Diferenciais -->
+        <section class="secao-diferenciais" id="diferenciais">
+            <div class="container">
+                <!-- Cabeçalho da seção -->
+                <div class="cabecalho-secao">
+                    <span class="icone-secao">✨</span>
+                    <h2 class="titulo-secao">O que Nos Torna Únicos</h2>
+                    <p class="subtitulo-secao">
+                        Não somos apenas mais um site de cursos. Somos um ecossistema de transição de carreira.
+                    </p>
+                </div>
+                
+                <!-- Grade de diferenciais -->
+                <div class="grade-diferenciais">
+                    <!-- Diferencial 1 -->
+                    <article class="cartao-diferencial">
+                        <div class="icone-diferencial"><i class="fas fa-brain" style="color: var(--cor-azul-petroleo);"></i></div>
+                        <h3 class="titulo-diferencial">Potencial Humano</h3>
+                        <p class="texto-diferencial">
+                            Valorizamos suas soft skills - empatia, paciência, criatividade. 
+                            Sua bagagem conta.
+                        </p>
+                    </article>
+                    
+                    <!-- Diferencial 2 -->
+                    <article class="cartao-diferencial">
+                        <div class="icone-diferencial"><i class="fas fa-stairs" style="color: var(--cor-laranja-coral);"></i></div>
+                        <h3 class="titulo-diferencial">Ponte em Degraus</h3>
+                        <p class="texto-diferencial">
+                            Transição acessível: primeiro, renda imediata. Depois, carreira nova.
+                        </p>
+                    </article>
+                    
+                    <!-- Diferencial 3 -->
+                    <article class="cartao-diferencial">
+                        <div class="icone-diferencial"><i class="fas fa-mobile-screen-button" style="color: var(--cor-azul-royal);"></i></div>
+                        <h3 class="titulo-diferencial">Mobile-First</h3>
+                        <p class="texto-diferencial">
+                            Estude no ônibus, no intervalo, onde e quando puder pelo celular.
+                        </p>
+                    </article>
+                    
+                    <!-- Diferencial 4 -->
+                    <article class="cartao-diferencial">
+                        <div class="icone-diferencial"><i class="fas fa-gamepad" style="color: var(--cor-laranja-queimado);"></i></div>
+                        <h3 class="titulo-diferencial">Gamificação</h3>
+                        <p class="texto-diferencial">
+                            Badges, certificados e conquistas para manter você motivado.
+                        </p>
+                    </article>
+                    
+                    <!-- Diferencial 5 -->
+                    <article class="cartao-diferencial">
+                        <div class="icone-diferencial"><i class="fas fa-gift" style="color: var(--cor-verde-menta);"></i></div>
+                        <h3 class="titulo-diferencial">100% Gratuito</h3>
+                        <p class="texto-diferencial">
+                            Curadoria dos melhores conteúdos gratuitos. Educação sem barreiras.
+                        </p>
+                    </article>
+                    
+                    <!-- Diferencial 6 -->
+                    <article class="cartao-diferencial">
+                        <div class="icone-diferencial"><i class="fas fa-handshake" style="color: var(--cor-azul-petroleo);"></i></div>
+                        <h3 class="titulo-diferencial">Comunidade Real</h3>
+                        <p class="texto-diferencial">
+                            Conecte-se com pessoas que compartilham seus desafios.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO: Depoimentos -->
+        <section class="secao-depoimentos" id="depoimentos">
+            <div class="container">
+                <!-- Cabeçalho da seção -->
+                <div class="cabecalho-secao">
+                    <span class="icone-secao">💬</span>
+                    <h2 class="titulo-secao">Histórias de Sucesso</h2>
+                    <p class="subtitulo-secao">
+                        Pessoas reais que mudaram suas vidas com a Rota Certa
+                    </p>
+                </div>
+                
+                <!-- Grade de depoimentos -->
+                <div class="grade-depoimentos">
+                    <!-- Depoimento 1: Ana -->
+                    <article class="cartao-depoimento">
+                        <div class="cabecalho-depoimento">
+                            <div class="avatar-depoimento">
+                                <img src="assets/ana.jpg" alt="Ana Silva">
+                            </div>
+                            <div class="info-pessoa">
+                                <h3 class="nome-pessoa">Ana Silva</h3>
+                                <p class="transicao-pessoa">Caixa → Customer Success</p>
+                            </div>
+                        </div>
+                        <blockquote class="texto-depoimento">
+                            "Trabalhei 8 anos como caixa. Descobri que minha habilidade de lidar com pessoas 
+                            valia muito. Hoje sou Analista de Sucesso do Cliente com salário 60% maior!"
+                        </blockquote>
+                        <div class="resultado-depoimento">
+                            <span class="badge-resultado">✓ 4 meses de transição</span>
+                            <span class="badge-resultado">✓ +60% salário</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Depoimento 2: Carlos -->
+                    <article class="cartao-depoimento">
+                        <div class="cabecalho-depoimento">
+                            <div class="avatar-depoimento">
+                                <img src="assets/carlos.jpg" alt="Carlos Santos">
+                            </div>
+                            <div class="info-pessoa">
+                                <h3 class="nome-pessoa">Carlos Santos</h3>
+                                <p class="transicao-pessoa">Telemarketing → Suporte TI</p>
+                            </div>
+                        </div>
+                        <blockquote class="texto-depoimento">
+                            "Sempre gostei de tecnologia mas não sabia por onde começar. 
+                            A Rota Certa me mostrou o caminho passo a passo. Hoje trabalho de home office!"
+                        </blockquote>
+                        <div class="resultado-depoimento">
+                            <span class="badge-resultado">✓ 5 meses de transição</span>
+                            <span class="badge-resultado">✓ Home office</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Depoimento 3: Maria -->
+                    <article class="cartao-depoimento">
+                        <div class="cabecalho-depoimento">
+                            <div class="avatar-depoimento">
+                                <img src="assets/maria.jpg" alt="Maria Oliveira">
+                            </div>
+                            <div class="info-pessoa">
+                                <h3 class="nome-pessoa">Maria Oliveira</h3>
+                                <p class="transicao-pessoa">Assist. Administrativo → Analista de Dados</p>
+                            </div>
+                        </div>
+                        <blockquote class="texto-depoimento">
+                            "Tinha medo de matemática, mas a plataforma me mostrou que eu já tinha 
+                            as habilidades necessárias. Aprendi no meu ritmo, no ônibus indo pro trabalho."
+                        </blockquote>
+                        <div class="resultado-depoimento">
+                            <span class="badge-resultado">✓ 6 meses de transição</span>
+                            <span class="badge-resultado">✓ +70% salário</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO: Diagnóstico (CTA) -->
+        <section class="secao-diagnostico" id="diagnostico">
+            <div class="container">
+                <div class="conteudo-diagnostico">
+                    <h2 class="titulo-diagnostico">Descubra o Risco da Sua Profissão</h2>
+                    <p class="subtitulo-diagnostico">
+                        Selecione sua profissão atual e veja instantaneamente o nível de risco de automação
+                    </p>
+                    
+                    <!-- Ferramenta de diagnóstico simplificada -->
+                    <div class="ferramenta-diagnostico">
+                        <!-- Seletor de profissão -->
+                        <div class="grupo-selecao">
+                            <label for="seletorProfissao" class="label-diagnostico">
+                                Qual sua profissão atual?
+                            </label>
+                            <select id="seletorProfissao" class="select-profissao">
+                                <option value="">Selecione sua profissão...</option>
+                                <option value="caixa" data-risco="85">Caixa de Supermercado/Loja</option>
+                                <option value="telemarketing" data-risco="95">Operador de Telemarketing</option>
+                                <option value="recepcionista" data-risco="75">Recepcionista</option>
+                                <option value="assistente-admin" data-risco="80">Assistente Administrativo</option>
+                                <option value="atendente" data-risco="70">Atendente de Loja</option>
+                                <option value="motorista" data-risco="65">Motorista de Transporte</option>
+                                <option value="operador-maquina" data-risco="90">Operador de Máquinas</option>
+                                <option value="faxineiro" data-risco="60">Auxiliar de Limpeza</option>
+                                <option value="bancario" data-risco="75">Bancário (Caixa/Atendimento)</option>
+                                <option value="vendedor" data-risco="55">Vendedor</option>
+                            </select>
+                            <small class="nota-formulario">💡 Não encontrou sua profissão? Você poderá fornecer mais informações na próxima página através do nosso formulário de inscrição completo e se atualizar sobre sua situação pessoal.</small>
+                        </div>
+                        
+                        <!-- Termômetro interativo de risco -->
+                        <div class="resultado-diagnostico" id="resultadoDiagnostico" style="display: none;">
+                            <div class="info-risco">
+                                <h3 class="titulo-resultado">Nível de Risco de Automação:</h3>
+                                <div class="percentual-risco">
+                                    <span class="numero-percentual" id="numeroPercentual">0</span>
+                                    <span class="simbolo-percentual">%</span>
+                                </div>
+                                <p class="descricao-risco" id="descricaoRisco"></p>
+                            </div>
+                            
+                            <!-- Barra de progresso animada -->
+                            <div class="barra-risco">
+                                <div class="preenchimento-barra" id="preenchimentoBarra">
+                                    <span class="icone-ponteiro">📍</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Legenda da barra -->
+                            <div class="legenda-barra">
+                                <span class="legenda-item baixo">
+                                    <span class="bolinha verde"></span>
+                                    Baixo (0-40%)
+                                </span>
+                                <span class="legenda-item medio">
+                                    <span class="bolinha amarelo"></span>
+                                    Médio (41-70%)
+                                </span>
+                                <span class="legenda-item alto">
+                                    <span class="bolinha vermelho"></span>
+                                    Alto (71-100%)
+                                </span>
+                            </div>
+                            
+                            <!-- Botão de ação -->
+                            <a href="#como-funciona" class="botao-principal botao-grande botao-completo">
+                                Ver Como Fazer a Transição
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Mensagem inicial -->
+                        <div class="mensagem-inicial" id="mensagemInicial">
+                            <div class="icone-grande">🎯</div>
+                            <p>Selecione sua profissão acima para ver o diagnóstico instantâneo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO: Impacto Social (ODS) -->
+        <section class="secao-impacto" id="impacto">
+            <div class="container">
+                <!-- Cabeçalho da seção -->
+                <div class="cabecalho-secao">
+                    <span class="icone-secao">🌍</span>
+                    <h2 class="titulo-secao">Nosso Compromisso com o Futuro</h2>
+                    <p class="subtitulo-secao">
+                        Alinhados com os Objetivos de Desenvolvimento Sustentável da ONU
+                    </p>
+                </div>
+                
+                <!-- Grade de ODS -->
+                <div class="grade-ods">
+                    <!-- ODS 4 -->
+                    <article class="cartao-ods">
+                        <div class="imagem-ods">
+                            <img src="assets/onu4.svg" alt="ODS 4 - Educação de Qualidade">
+                        </div>
+                        <h3 class="titulo-ods">Educação de Qualidade</h3>
+                        <p class="texto-ods">
+                            Curadoria de conteúdo acessível e gratuito, democratizando o conhecimento.
+                        </p>
+                    </article>
+                    
+                    <!-- ODS 8 -->
+                    <article class="cartao-ods">
+                        <div class="imagem-ods">
+                            <img src="assets/onu8.svg" alt="ODS 8 - Trabalho Decente">
+                        </div>
+                        <h3 class="titulo-ods">Trabalho Decente</h3>
+                        <p class="texto-ods">
+                            Requalificação para a economia do futuro, gerando oportunidades dignas.
+                        </p>
+                    </article>
+                    
+                    <!-- ODS 10 -->
+                    <article class="cartao-ods">
+                        <div class="imagem-ods">
+                            <img src="assets/onu10.svg" alt="ODS 10 - Redução das Desigualdades">
+                        </div>
+                        <h3 class="titulo-ods">Redução das Desigualdades</h3>
+                        <p class="texto-ods">
+                            Foco na base da pirâmide, evitando exclusão tecnológica.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ========== RODAPÉ ========== -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="conteudo-rodape">
+                <!-- Coluna 1: Sobre -->
+                <div class="coluna-rodape coluna-principal">
+                    <!-- Logo no rodapé -->
+                    <div class="logo-rodape">
+                        <i class="fas fa-route icone-logo-rodape"></i>
+                        <span class="texto-logo-rodape">
+                            <span class="texto-rota">Rota</span><span class="texto-certa">Certa</span>
+                        </span>
+                    </div>
+                    <p class="texto-rodape">
+                        O GPS da Requalificação Profissional. Ajudando trabalhadores 
+                        a encontrarem seu caminho na era da automação.
+                    </p>
+                </div>
+                
+                <!-- Coluna 2: Links -->
+                <div class="coluna-rodape">
+                    <h4 class="subtitulo-rodape">Links Rápidos</h4>
+                    <ul class="lista-rodape">
+                        <li><a href="pages/sobre.html">Sobre Nós</a></li>
+                        <li><a href="pages/faq.html">Perguntas Frequentes</a></li>
+                        <li><a href="pages/integrantes.html">Nossa Equipe</a></li>
+                        <li><a href="pages/contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Coluna 3: Recursos -->
+                <div class="coluna-rodape">
+                    <h4 class="subtitulo-rodape">Recursos</h4>
+                    <ul class="lista-rodape">
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#diagnostico">Fazer Diagnóstico</a></li>
+                        <li><a href="#historia">História de Sucesso</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Coluna 4: Newsletter -->
+                <div class="coluna-rodape">
+                    <h4 class="subtitulo-rodape">Fique por Dentro</h4>
+                    <p class="texto-rodape-pequeno">Receba novidades sobre carreira.</p>
+                    <form class="formulario-newsletter">
+                        <input 
+                            type="email" 
+                            placeholder="seu@email.com" 
+                            class="campo-newsletter"
+                            required
+                        >
+                        <button type="submit" class="botao-newsletter"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Barra inferior do rodapé -->
+            <div class="rodape-inferior">
+                <p class="texto-copyright">
+                    &copy; 2025 Rota Certa - GPS da Requalificação Profissional. 
+                    Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ========== SCRIPTS ========== -->
+    <script src="js/menu.js"></script>
+    
+</body>
+</html>
