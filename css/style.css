@@ -1,0 +1,695 @@
+/* ========================================
+   STYLE.CSS - ESTILOS GLOBAIS
+   Rota Certa - GPS da Requalificação
+   ======================================== */
+
+/* ===== RESET BÁSICO ===== */
+/* Remove margens e paddings padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz width incluir padding e border */
+}
+
+/* ===== VARIÁVEIS CSS (Custom Properties) ===== */
+/* Permite reutilizar valores em todo o CSS */
+:root {
+    /* Cores Principais - Seguindo briefing da identidade visual */
+    
+    /* Azul: Confiança e Tecnologia (não muito escuro, tons claros) */
+    --cor-azul-petroleo: #2980b9;        /* Azul Petróleo suave */
+    --cor-azul-royal: #5dade2;           /* Azul Royal Suave (cor primária) */
+    --cor-azul-escuro: #1a5276;          /* Para textos sobre azul */
+    
+    /* Laranja: Energia e Movimento (cor de ação/CTA) */
+    --cor-laranja-coral: #ff7657;        /* Coral (cor de ação principal) */
+    --cor-laranja-queimado: #e8552e;     /* Laranja Queimado (hover) */
+    
+    /* Verde: Sucesso e Segurança (progresso e rota segura) */
+    --cor-verde-menta: #52c9b3;          /* Verde Menta (sucesso) */
+    --cor-verde-folha: #45b597;          /* Verde Folha (segurança) */
+    
+    /* Cores Neutras: Fundo limpo */
+    --cor-branco: #ffffff;               /* Branco puro */
+    --cor-cinza-gelo: #f8f9fb;           /* Cinza gelo (fundo) */
+    --cor-cinza-claro: #e8ecef;          /* Cinza claro (bordas) */
+    --cor-cinza-medio: #9ca3af;          /* Cinza médio (textos secundários) */
+    --cor-cinza-escuro: #4b5563;         /* Cinza escuro (textos) */
+    --cor-preto: #1f2937;                /* Preto suave (textos principais) */
+    
+    /* Cores de Status (Termômetro de Risco) */
+    --cor-risco-baixo: #52c9b3;          /* Verde Menta */
+    --cor-risco-medio: #f5a623;          /* Amarelo/Laranja */
+    --cor-risco-alto: #e74c3c;           /* Vermelho alerta */
+    
+    /* Tipografia */
+    --fonte-titulos: 'Poppins', sans-serif;
+    --fonte-texto: 'Open Sans', sans-serif;
+    
+    /* Tamanhos de Fonte (Mobile First - Base 16px) */
+    --texto-pequeno: 0.875rem;    /* 14px */
+    --texto-normal: 1rem;          /* 16px */
+    --texto-medio: 1.125rem;       /* 18px */
+    --texto-grande: 1.25rem;       /* 20px */
+    --titulo-pequeno: 1.5rem;      /* 24px */
+    --titulo-medio: 2rem;          /* 32px */
+    --titulo-grande: 2.5rem;       /* 40px */
+    --titulo-gigante: 3rem;        /* 48px */
+    
+    /* Espaçamentos (Sistema de 8px) */
+    --espacamento-minimo: 0.5rem;  /* 8px */
+    --espacamento-pequeno: 1rem;   /* 16px */
+    --espacamento-medio: 1.5rem;   /* 24px */
+    --espacamento-grande: 2rem;    /* 32px */
+    --espacamento-enorme: 3rem;    /* 48px */
+    --espacamento-gigante: 4rem;   /* 64px */
+    
+    /* Bordas e Sombras */
+    --borda-radius-pequeno: 8px;
+    --borda-radius-medio: 12px;
+    --borda-radius-grande: 16px;
+    --borda-radius-completo: 50px;
+    
+    --sombra-leve: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --sombra-media: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --sombra-forte: 0 8px 24px rgba(0, 0, 0, 0.16);
+    
+    /* Transições */
+    --transicao-rapida: 0.2s ease;
+    --transicao-normal: 0.3s ease;
+    --transicao-lenta: 0.5s ease;
+}
+
+/* ===== CONFIGURAÇÕES GLOBAIS ===== */
+html {
+    /* Scroll suave ao clicar em âncoras */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    font-size: var(--texto-normal);
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+    color: var(--cor-preto);
+    background-color: var(--cor-branco);
+    /* Previne scroll horizontal indesejado - max-width ao invés de overflow */
+    max-width: 100vw;
+    overflow-x: hidden;
+    /* Suaviza renderização de fontes */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== CONTAINER ===== */
+/* Limita largura do conteúdo e centraliza */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Largura máxima em desktops */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 var(--espacamento-pequeno); /* Espaçamento lateral */
+}
+
+/* Aumenta padding em telas maiores */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--espacamento-grande);
+    }
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulos);
+    font-weight: 700; /* Negrito */
+    line-height: 1.2; /* Linhas mais próximas em títulos */
+    color: var(--cor-preto);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+h1 {
+    font-size: var(--titulo-medio);
+}
+
+h2 {
+    font-size: var(--titulo-pequeno);
+}
+
+h3 {
+    font-size: var(--texto-grande);
+}
+
+/* Títulos maiores em tablets e desktops */
+@media (min-width: 768px) {
+    h1 {
+        font-size: var(--titulo-gigante);
+    }
+    
+    h2 {
+        font-size: var(--titulo-grande);
+    }
+    
+    h3 {
+        font-size: var(--titulo-pequeno);
+    }
+}
+
+p {
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+/* ===== LINKS ===== */
+a {
+    color: var(--cor-azul-royal);
+    text-decoration: none; /* Remove sublinhado */
+    transition: color var(--transicao-rapida);
+}
+
+a:hover {
+    color: var(--cor-azul-petroleo);
+}
+
+/* ===== LISTAS ===== */
+ul, ol {
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+ul {
+    list-style: none; /* Remove marcadores */
+}
+
+/* ===== BOTÕES ===== */
+/* Classe base para todos os botões */
+.botao-principal,
+.botao-secundario {
+    /* Layout */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espacamento-minimo);
+    
+    /* Espaçamento interno */
+    padding: var(--espacamento-pequeno) var(--espacamento-medio);
+    
+    /* Tipografia */
+    font-family: var(--fonte-titulos);
+    font-size: var(--texto-normal);
+    font-weight: 600;
+    
+    /* Visual */
+    border: none;
+    border-radius: var(--borda-radius-completo);
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+    
+    /* Transição suave */
+    transition: all var(--transicao-normal);
+    
+    /* Remove aparência padrão de link */
+    text-decoration: none;
+}
+
+/* Botão Principal (laranja) */
+.botao-principal {
+    background-color: var(--cor-laranja-coral);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-media);
+}
+
+.botao-principal:hover {
+    background-color: var(--cor-laranja-queimado);
+    transform: translateY(-2px); /* Efeito de levantar */
+    box-shadow: var(--sombra-forte);
+    color: var(--cor-branco);
+}
+
+/* Botão Secundário (contorno) */
+.botao-secundario {
+    background-color: transparent;
+    color: var(--cor-azul-royal);
+    border: 2px solid var(--cor-azul-royal);
+}
+
+.botao-secundario:hover {
+    background-color: var(--cor-azul-royal);
+    color: var(--cor-branco);
+}
+
+/* Tamanho grande de botão */
+.botao-grande {
+    padding: var(--espacamento-medio) var(--espacamento-grande);
+    font-size: var(--texto-medio);
+}
+
+/* Botão que ocupa toda a largura */
+.botao-completo {
+    width: 100%;
+}
+
+/* ===== CABEÇALHO DA SEÇÃO ===== */
+/* Estilo padrão para cabeçalhos de seções */
+.cabecalho-secao {
+    text-align: center;
+    margin-bottom: var(--espacamento-enorme);
+}
+
+.icone-secao {
+    font-size: var(--titulo-grande);
+    display: block;
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.titulo-secao {
+    color: var(--cor-azul-petroleo);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.subtitulo-secao {
+    font-size: var(--texto-medio);
+    color: var(--cor-cinza-escuro);
+    max-width: 700px;
+    margin: 0 auto; /* Centraliza */
+}
+
+/* ===== ESPAÇAMENTO DE SEÇÕES ===== */
+/* Padrão de espaçamento vertical entre seções */
+section {
+    padding: var(--espacamento-enorme) 0;
+}
+
+/* Espaçamento maior em telas grandes */
+@media (min-width: 768px) {
+    section {
+        padding: var(--espacamento-gigante) 0;
+    }
+}
+
+/* ===== IMAGENS RESPONSIVAS ===== */
+img {
+    max-width: 100%; /* Nunca ultrapassar largura do container */
+    height: auto; /* Mantém proporção */
+    display: block;
+}
+
+/* ===== FORMULÁRIOS ===== */
+/* Estilos base para campos de entrada */
+.campo-entrada {
+    width: 100%;
+    padding: var(--espacamento-pequeno);
+    font-size: var(--texto-normal);
+    font-family: var(--fonte-texto);
+    border: 2px solid var(--cor-cinza-claro);
+    border-radius: var(--borda-radius-pequeno);
+    transition: border-color var(--transicao-rapida);
+}
+
+.campo-entrada:focus {
+    outline: none; /* Remove contorno padrão */
+    border-color: var(--cor-azul-royal);
+}
+
+/* Labels dos campos */
+.label-campo {
+    display: block;
+    font-weight: 600;
+    color: var(--cor-cinza-escuro);
+    margin-bottom: var(--espacamento-minimo);
+}
+
+/* ===== ANIMAÇÕES ===== */
+/* Animação de entrada (fade in + slide up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classe para animar elementos ao scroll */
+.animar-entrada {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ===== ACESSIBILIDADE ===== */
+/* Foco visível para navegação por teclado */
+*:focus-visible {
+    outline: 3px solid var(--cor-azul-royal);
+    outline-offset: 2px;
+}
+
+/* Esconde visualmente mas mantém para leitores de tela */
+.visualmente-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ===== UTILITÁRIOS ===== */
+/* Classes auxiliares reutilizáveis */
+
+.texto-centro {
+    text-align: center;
+}
+
+.texto-branco {
+    color: var(--cor-branco);
+}
+
+.fundo-cinza {
+    background-color: var(--cor-cinza-gelo);
+}
+
+.espacamento-topo-grande {
+    margin-top: var(--espacamento-grande);
+}
+
+.espacamento-baixo-grande {
+    margin-bottom: var(--espacamento-grande);
+}
+
+/* ===== CABEÇALHO E NAVEGAÇÃO ===== */
+
+.cabecalho {
+    background-color: var(--cor-branco);
+    box-shadow: var(--sombra-leve);
+    position: sticky; /* Fica fixo ao rolar */
+    top: 0;
+    z-index: 1000; /* Fica acima de outros elementos */
+}
+
+.navegacao-principal .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--espacamento-pequeno);
+    padding-bottom: var(--espacamento-pequeno);
+    min-height: 70px;
+}
+
+/* Logo */
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: opacity var(--transicao-rapida);
+}
+
+.logo a:hover {
+    opacity: 0.85;
+}
+
+/* Ícone do logo (Font Awesome) */
+.icone-logo {
+    font-size: 1.75rem;
+    color: var(--cor-azul-petroleo);
+}
+
+/* Texto do logo */
+.texto-logo {
+    font-family: 'Poppins', var(--fonte-titulos);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Palavra 'Rota' em Azul */
+.texto-rota {
+    color: var(--cor-azul-petroleo);
+}
+
+/* Palavra 'Certa' em Laranja */
+.texto-certa {
+    color: var(--cor-laranja-coral);
+}
+
+/* Botão Menu Mobile (Hambúrguer) */
+.botao-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.linha-menu {
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-azul-petroleo);
+    border-radius: 2px;
+    transition: all var(--transicao-normal);
+}
+
+/* Animação do X quando menu está aberto */
+.botao-menu.ativo .linha-menu:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.botao-menu.ativo .linha-menu:nth-child(2) {
+    opacity: 0; /* Linha do meio desaparece */
+}
+
+.botao-menu.ativo .linha-menu:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Menu de Navegação - Mobile */
+.menu-navegacao {
+    /* Esconde menu no mobile por padrão */
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-branco);
+    box-shadow: var(--sombra-media);
+    padding: var(--espacamento-medio);
+    flex-direction: column;
+    gap: var(--espacamento-minimo);
+}
+
+/* Menu aberto (adicionado via JavaScript) */
+.menu-navegacao.ativo {
+    display: flex;
+}
+
+.menu-navegacao li {
+    width: 100%;
+}
+
+.menu-navegacao a {
+    display: block;
+    padding: var(--espacamento-pequeno);
+    color: var(--cor-cinza-escuro);
+    font-weight: 600;
+    border-radius: var(--borda-radius-pequeno);
+    transition: all var(--transicao-rapida);
+}
+
+.menu-navegacao a:hover,
+.menu-navegacao a.link-ativo {
+    background-color: var(--cor-cinza-gelo);
+    color: var(--cor-azul-royal);
+}
+
+/* Botão do cabeçalho - esconde no mobile */
+.botao-cabecalho {
+    display: none;
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    /* Esconde botão hambúrguer */
+    .botao-menu {
+        display: none;
+    }
+    
+    /* Menu horizontal */
+    .menu-navegacao {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        gap: var(--espacamento-medio);
+    }
+    
+    .menu-navegacao li {
+        width: auto;
+    }
+    
+    /* Mostra botão do cabeçalho */
+    .botao-cabecalho {
+        display: inline-flex;
+    }
+}
+
+/* ===== RODAPÉ ===== */
+
+.rodape {
+    background-color: var(--cor-cinza-escuro);
+    color: var(--cor-cinza-claro);
+    padding: var(--espacamento-enorme) 0 var(--espacamento-grande);
+}
+
+.conteudo-rodape {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-grande);
+    margin-bottom: var(--espacamento-grande);
+}
+
+.coluna-rodape h3,
+.coluna-rodape h4 {
+    color: var(--cor-branco);
+    margin-bottom: var(--espacamento-pequeno);
+    text-align: center;
+}
+
+.coluna-rodape p, .coluna-rodape li {
+    text-align: center;
+}
+
+/* Logo no rodapé */
+.logo-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: var(--espacamento-medio);
+}
+
+.icone-logo-rodape {
+    font-size: 2rem;
+    color: var(--cor-azul-royal);
+}
+
+.texto-logo-rodape {
+    font-family: 'Poppins', var(--fonte-titulos);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.texto-logo-rodape .texto-rota {
+    color: var(--cor-azul-royal);
+}
+
+.texto-logo-rodape .texto-certa {
+    color: var(--cor-laranja-coral);
+}
+
+.titulo-rodape {
+    font-size: var(--texto-grande);
+}
+
+.subtitulo-rodape {
+    font-size: var(--texto-normal);
+}
+
+.texto-rodape {
+    line-height: 1.7;
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.texto-rodape-pequeno {
+    font-size: var(--texto-pequeno);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.lista-rodape {
+    list-style: none;
+}
+
+.lista-rodape li {
+    margin-bottom: var(--espacamento-minimo);
+}
+
+.lista-rodape a {
+    color: var(--cor-cinza-claro);
+    transition: color var(--transicao-rapida);
+}
+
+.lista-rodape a:hover {
+    color: var(--cor-branco);
+}
+
+/* Formulário de newsletter */
+.formulario-newsletter {
+    display: flex;
+    gap: var(--espacamento-minimo);
+    margin-top: var(--espacamento-pequeno);
+}
+
+.campo-newsletter {
+    flex: 1;
+    padding: var(--espacamento-pequeno);
+    border: none;
+    border-radius: var(--borda-radius-pequeno);
+    font-size: var(--texto-pequeno);
+}
+
+.botao-newsletter {
+    padding: var(--espacamento-pequeno) var(--espacamento-medio);
+    background-color: var(--cor-laranja-coral);
+    color: var(--cor-branco);
+    border: none;
+    border-radius: var(--borda-radius-pequeno);
+    cursor: pointer;
+    font-size: var(--texto-medio);
+    transition: background-color var(--transicao-rapida);
+}
+
+.botao-newsletter:hover {
+    background-color: var(--cor-laranja-queimado);
+}
+
+/* Rodapé inferior */
+.rodape-inferior {
+    padding-top: var(--espacamento-grande);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: var(--texto-pequeno);
+}
+
+.texto-copyright {
+    color: var(--cor-cinza-medio);
+}
+
+/* Tablet: 2 colunas */
+@media (min-width: 768px) {
+    .conteudo-rodape {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: 4 colunas */
+@media (min-width: 992px) {
+    .conteudo-rodape {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    }
+}
+
+/* Responsividade do logo */
+@media (max-width: 480px) {
+    .icone-logo {
+        font-size: 1.5rem;
+    }
+    
+    .texto-logo {
+        font-size: 1.25rem;
+    }
+}
