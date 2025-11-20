@@ -1,202 +1,378 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Configurações básicas do documento -->
+    <!-- ============================================
+         META TAGS - Configurações essenciais do documento
+         ============================================ -->
+    
+    <!-- Charset UTF-8: Define codificação de caracteres para suportar acentos e caracteres especiais -->
     <meta charset="UTF-8">
+    
+    <!-- Viewport: Essencial para responsividade - controla como a página é renderizada em diferentes dispositivos -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Description: Importante para SEO - aparece nos resultados de busca do Google -->
     <meta name="description" content="Rota Certa - O GPS da Requalificação Profissional. Descubra seu caminho para uma nova carreira.">
     
-    <!-- Título da página -->
+    <!-- Keywords: Palavras-chave para SEO -->
+    <meta name="keywords" content="requalificação profissional, transição de carreira, automação, tecnologia, emprego, cursos online">
+    
+    <!-- Author: Identificação dos criadores -->
+    <meta name="author" content="Equipe Rota Certa - FIAP">
+    
+    <!-- ============================================
+         TÍTULO DA PÁGINA
+         ============================================ -->
     <title>Rota Certa - O GPS da Requalificação Profissional</title>
     
-    <!-- Link para as fontes do Google Fonts -->
+    <!-- ============================================
+         FONTES EXTERNAS - Google Fonts
+         ============================================ -->
+    <!-- Preconnect: Estabelece conexão prévia com o servidor para carregar fontes mais rápido -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Importação das fontes Poppins (títulos) e Open Sans (textos) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome para ícones -->
+    <!-- ============================================
+         ÍCONES - Font Awesome CDN
+         ============================================ -->
+    <!-- Font Awesome: Biblioteca de ícones vetoriais -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Link para os arquivos CSS -->
+    <!-- ============================================
+         FOLHAS DE ESTILO CSS
+         ============================================ -->
+    <!-- style.css: Estilos globais e componentes compartilhados -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- index-style.css: Estilos específicos da página inicial -->
     <link rel="stylesheet" href="css/index-style.css">
 </head>
 <body>
     
-    <!-- ========== CABEÇALHO E NAVEGAÇÃO ========== -->
-    <header class="cabecalho">
-        <nav class="navegacao-principal">
+    <!-- ============================================
+         HEADER - Cabeçalho com Navegação Principal
+         ============================================
+         Elemento semântico <header> contém a identidade da marca
+         e o menu de navegação principal do site.
+         Position: sticky mantém o header visível ao rolar.
+         ============================================ -->
+    <header class="cabecalho" role="banner">
+        
+        <!-- NAV: Contêiner de navegação principal -->
+        <nav class="navegacao-principal" role="navigation" aria-label="Menu principal">
             <div class="container">
-                <!-- Logo da marca -->
+                
+                <!-- LOGO: Identidade visual da marca -->
                 <div class="logo">
-                    <a href="index.html" aria-label="RotaCerta - GPS da Requalificação Profissional">
-                        <i class="fas fa-route icone-logo"></i>
+                    <!-- Link para página inicial com atributo aria-label para acessibilidade -->
+                    <a href="index.html" aria-label="RotaCerta - GPS da Requalificação Profissional" title="Voltar para página inicial">
+                        <!-- Ícone de rota (Font Awesome) -->
+                        <i class="fas fa-route icone-logo" aria-hidden="true"></i>
+                        
+                        <!-- Texto da logo com cores distintas -->
                         <span class="texto-logo">
                             <span class="texto-rota">Rota</span><span class="texto-certa">Certa</span>
                         </span>
                     </a>
                 </div>
                 
-                <!-- Botão do menu mobile (hambúrguer) -->
-                <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu de navegação" aria-expanded="false">
-                    <span class="linha-menu"></span>
-                    <span class="linha-menu"></span>
-                    <span class="linha-menu"></span>
+                <!-- BOTÃO MENU MOBILE: Hambúrguer para telas pequenas -->
+                <!-- Controlado via JavaScript (menu.js) -->
+                <button 
+                    class="botao-menu" 
+                    id="botaoMenu" 
+                    type="button"
+                    aria-label="Abrir menu de navegação" 
+                    aria-expanded="false"
+                    aria-controls="menuNavegacao">
+                    <!-- Três linhas que formam o ícone hambúrguer -->
+                    <span class="linha-menu" aria-hidden="true"></span>
+                    <span class="linha-menu" aria-hidden="true"></span>
+                    <span class="linha-menu" aria-hidden="true"></span>
                 </button>
                 
-                <!-- Menu de navegação -->
-                <ul class="menu-navegacao" id="menuNavegacao">
-                    <li><a href="index.html" class="link-ativo">Início</a></li>
-                    <li><a href="pages/sobre.html">Sobre</a></li>
-                    <li><a href="pages/faq.html">Perguntas</a></li>
-                    <li><a href="pages/integrantes.html">Equipe</a></li>
-                    <li><a href="pages/contato.html">Contato</a></li>
+                <!-- MENU DE NAVEGAÇÃO: Lista de links principais -->
+                <!-- Escondido no mobile, visível no desktop -->
+                <ul class="menu-navegacao" id="menuNavegacao" role="menubar">
+                    <li role="none">
+                        <a href="index.html" class="link-ativo" role="menuitem" aria-current="page">Início</a>
+                    </li>
+                    <li role="none">
+                        <a href="pages/sobre.html" role="menuitem">Sobre</a>
+                    </li>
+                    <li role="none">
+                        <a href="pages/faq.html" role="menuitem">Perguntas</a>
+                    </li>
+                    <li role="none">
+                        <a href="pages/integrantes.html" role="menuitem">Equipe</a>
+                    </li>
+                    <li role="none">
+                        <a href="pages/contato.html" role="menuitem">Contato</a>
+                    </li>
                 </ul>
                 
-                <!-- Botão de ação principal -->
-                <a href="#diagnostico" class="botao-principal botao-cabecalho">Começar Agora</a>
+                <!-- CTA BUTTON: Call-to-Action principal do header -->
+                <!-- Visível apenas em desktop (display: none no mobile via CSS) -->
+                <a 
+                    href="./pages/rota.html" 
+                    class="botao-principal botao-cabecalho"
+                    role="button"
+                    aria-label="Começar questionário de requalificação">
+                    Começar Agora 
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+                
             </div>
         </nav>
-    </header>
-    
-    <!-- ========== CONTEÚDO PRINCIPAL ========== -->
-    <main>
         
-        <!-- SEÇÃO: Hero (Banner Principal) -->
-        <section class="secao-hero" id="inicio">
+    </header>
+    <!-- FIM DO HEADER -->
+    
+    <!-- ============================================
+         MAIN - Conteúdo Principal da Página
+         ============================================
+         Elemento semântico <main> contém o conteúdo principal
+         único desta página. Deve haver apenas um <main> por página.
+         ============================================ -->
+    <main id="conteudo-principal" role="main">
+        
+        <!-- ============================================
+             SEÇÃO HERO - Banner Principal de Destaque
+             ============================================
+             Primeira seção que o usuário vê (above the fold).
+             Utiliza background image com blur, glassmorphism e
+             animações para impactar visualmente o visitante.
+             ============================================ -->
+        <section class="secao-hero" id="inicio" aria-labelledby="titulo-hero">
             <div class="container">
                 <div class="conteudo-hero">
-                    <!-- Conteúdo centralizado com glassmorphism -->
+                    
+                    <!-- Card centralizado com efeito glassmorphism -->
                     <div class="conteudo-hero-centralizado">
-                        <!-- Badge de alerta animado -->
-                        <div class="badge-alerta-hero">
-                            <i class="fas fa-exclamation-triangle icone-alerta-hero"></i>
+                        
+                        <!-- BADGE DE ALERTA: Chama atenção com animação -->
+                        <div class="badge-alerta-hero" role="alert" aria-live="polite">
+                            <i class="fas fa-exclamation-triangle icone-alerta-hero" aria-hidden="true"></i>
                             <span>Seu trabalho está em risco?</span>
                         </div>
                         
-                        <!-- Título principal com destaque -->
-                        <h1 class="titulo-hero-grande">
+                        <!-- TÍTULO PRINCIPAL H1: Deve ser único na página -->
+                        <!-- Utiliza palavras-chave importantes para SEO -->
+                        <h1 class="titulo-hero-grande" id="titulo-hero">
                             O GPS da
                             <span class="destaque-hero-laranja">Requalificação</span>
                             <span class="destaque-hero-laranja">Profissional</span>
                             resolve!
                         </h1>
                         
-                        <!-- Subtítulo impactante -->
+                        <!-- SUBTÍTULO: Complementa a proposta de valor -->
                         <p class="subtitulo-hero-impacto">
                             <strong>Não espere ser substituído.</strong><br>
                             Descubra sua rota personalizada para uma carreira
                             à prova de futuro
                         </p>
                         
-                        <!-- Estatísticas em destaque -->
-                        <div class="stats-hero-destaque">
+                        <!-- ESTATÍSTICAS: Dados que validam a urgência do problema -->
+                        <div class="stats-hero-destaque" aria-label="Estatísticas de impacto">
+                            
+                            <!-- Estatística 1 -->
                             <div class="stat-item-hero">
-                                <div class="stat-numero-hero">47%</div>
+                                <div class="stat-numero-hero" aria-label="47 porcento">47%</div>
                                 <div class="stat-texto-hero">empregos em risco até 2030</div>
                             </div>
-                            <div class="stat-separador"></div>
+                            
+                            <!-- Separador visual -->
+                            <div class="stat-separador" aria-hidden="true"></div>
+                            
+                            <!-- Estatística 2 -->
                             <div class="stat-item-hero">
-                                <div class="stat-numero-hero">3M+</div>
+                                <div class="stat-numero-hero" aria-label="Mais de 3 milhões">3M+</div>
                                 <div class="stat-texto-hero">brasileiros precisam se requalificar</div>
                             </div>
+                            
                         </div>
                         
-                        <!-- Botões de ação destacados -->
+                        <!-- CALL TO ACTION: Botões de ação principais -->
                         <div class="acoes-hero-destacadas">
-                            <a href="#diagnostico" class="botao-hero-principal">
-                                <i class="fas fa-route"></i>
+                            
+                            <!-- CTA Primário: Leva ao questionário -->
+                            <a 
+                                href="pages/rota.html" 
+                                class="botao-hero-principal"
+                                role="button"
+                                aria-label="Iniciar questionário para descobrir sua rota profissional">
+                                <i class="fas fa-route" aria-hidden="true"></i>
                                 Descobrir Minha Rota
-                                <i class="fas fa-arrow-right"></i>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
-                            <a href="#como-funciona" class="botao-hero-outline">
-                                <i class="fas fa-play-circle"></i>
+                            
+                            <!-- CTA Secundário: Ancora para seção explicativa -->
+                            <a 
+                                href="#como-funciona" 
+                                class="botao-hero-outline"
+                                role="button"
+                                aria-label="Rolar para seção sobre como funciona">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
                                 Como Funciona
                             </a>
+                            
                         </div>
+                        
                     </div>
+                    
                 </div>
             </div>
         </section>
+        <!-- FIM DA SEÇÃO HERO -->
         
-        <!-- SEÇÃO: O Problema -->
-        <section class="secao-problema" id="problema">
+        <!-- ============================================
+             SEÇÃO PROBLEMA - Identificação da Dor do Usuário
+             ============================================
+             Apresenta os 3 principais problemas que o público
+             enfrenta, criando conexão emocional antes de
+             apresentar a solução.
+             ============================================ -->
+        <section class="secao-problema" id="problema" aria-labelledby="titulo-problema">
             <div class="container">
-                <!-- Cabeçalho da seção -->
-                <div class="cabecalho-secao">
-                    <span class="icone-secao">🚨</span>
-                    <h2 class="titulo-secao">O Problema que Você Precisa Conhecer</h2>
+                
+                <!-- HEADER DA SEÇÃO: Introdução padronizada -->
+                <header class="cabecalho-secao">
+                    <span class="icone-secao" role="img" aria-label="Alerta">🚨</span>
+                    <h2 class="titulo-secao" id="titulo-problema">O Problema que Você Precisa Conhecer</h2>
                     <p class="subtitulo-secao">
                         A automação não é o futuro. Ela já está aqui, transformando o mercado de trabalho atual.
                     </p>
-                </div>
+                </header>
                 
-                <!-- Grade de barreiras -->
-                <div class="grade-barreiras">
-                    <!-- Barreira 1 -->
-                    <article class="cartao-barreira">
-                        <div class="icone-barreira">😶‍🌫️</div>
+                <!-- GRID DE BARREIRAS: Layout responsivo (1 coluna mobile, 3 desktop) -->
+                <div class="grade-barreiras" role="list">
+                    
+                    <!-- CARD 1: Desconhecimento -->
+                    <!-- Elemento <article> indica conteúdo independente e autocontido -->
+                    <article class="cartao-barreira" role="listitem">
+                        <div class="icone-barreira" role="img" aria-label="Pessoa confusa">😶‍🌫️</div>
                         <h3 class="titulo-barreira">Desconhecimento</h3>
                         <p class="texto-barreira">
                             Muitos trabalhadores não sabem que sua função está ameaçada pela tecnologia.
                         </p>
                     </article>
                     
-                    <!-- Barreira 2 -->
-                    <article class="cartao-barreira">
-                        <div class="icone-barreira">🤷</div>
+                    <!-- CARD 2: Paralisia -->
+                    <article class="cartao-barreira" role="listitem">
+                        <div class="icone-barreira" role="img" aria-label="Pessoa sem direção">🤷</div>
                         <h3 class="titulo-barreira">Paralisia</h3>
                         <p class="texto-barreira">
                             Mesmo sabendo do risco, não sabem para onde migrar ou que carreira seguir.
                         </p>
                     </article>
                     
-                    <!-- Barreira 3 -->
-                    <article class="cartao-barreira">
-                        <div class="icone-barreira">🗺️</div>
+                    <!-- CARD 3: Falta de Roteiro -->
+                    <article class="cartao-barreira" role="listitem">
+                        <div class="icone-barreira" role="img" aria-label="Mapa">🗺️</div>
                         <h3 class="titulo-barreira">Falta de Roteiro</h3>
                         <p class="texto-barreira">
                             Não têm orientação clara sobre qual é o primeiro passo na transição de carreira.
                         </p>
                     </article>
+                    
                 </div>
+                
             </div>
         </section>
+        <!-- FIM DA SEÇÃO PROBLEMA -->
         
-        <!-- SEÇÃO: Como Funciona -->
-        <section class="secao-como-funciona" id="como-funciona">
+        <!-- ============================================
+             SEÇÃO COMO FUNCIONA - Sistema de Tabs Interativo
+             ============================================
+             Utiliza JavaScript (menu.js) para criar navegação
+             por abas, permitindo apresentar múltiplas informações
+             sem sobrecarregar a página.
+             Pattern: Progressive Disclosure
+             ============================================ -->
+        <section class="secao-como-funciona" id="como-funciona" aria-labelledby="titulo-como-funciona">
             <div class="container">
-                <!-- Cabeçalho da seção -->
-                <div class="cabecalho-secao">
-                    <span class="icone-secao">🧭</span>
-                    <h2 class="titulo-secao">Como o GPS Funciona</h2>
+                
+                <!-- HEADER DA SEÇÃO -->
+                <header class="cabecalho-secao">
+                    <span class="icone-secao" role="img" aria-label="Bússola">🧭</span>
+                    <h2 class="titulo-secao" id="titulo-como-funciona">Como o GPS Funciona</h2>
                     <p class="subtitulo-secao">
                         Uma jornada guiada em 5 etapas simples
                     </p>
-                </div>
+                </header>
                 
-                <!-- Navegação por Tabs -->
-                <div class="tabs-navegacao">
-                    <button class="tab-botao ativo" data-tab="1">
-                        <span class="tab-numero">1</span>
+                <!-- TABS NAVEGAÇÃO: Botões das abas -->
+                <!-- Controlado via JavaScript: classe 'ativo' é alternada -->
+                <div class="tabs-navegacao" role="tablist" aria-label="Etapas do processo">
+                    
+                    <!-- Tab Button 1: data-tab conecta com o painel correspondente -->
+                    <button 
+                        class="tab-botao ativo" 
+                        data-tab="1"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="tab-1"
+                        id="tab-button-1"
+                        type="button">
+                        <span class="tab-numero" aria-hidden="true">1</span>
                         <span class="tab-titulo">Diagnóstico</span>
                     </button>
-                    <button class="tab-botao" data-tab="2">
-                        <span class="tab-numero">2</span>
+                    
+                    <!-- Tab Button 2 -->
+                    <button 
+                        class="tab-botao" 
+                        data-tab="2"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="tab-2"
+                        id="tab-button-2"
+                        type="button">
+                        <span class="tab-numero" aria-hidden="true">2</span>
                         <span class="tab-titulo">Termômetro</span>
                     </button>
-                    <button class="tab-botao" data-tab="3">
-                        <span class="tab-numero">3</span>
+                    
+                    <!-- Tab Button 3 -->
+                    <button 
+                        class="tab-botao" 
+                        data-tab="3"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="tab-3"
+                        id="tab-button-3"
+                        type="button">
+                        <span class="tab-numero" aria-hidden="true">3</span>
                         <span class="tab-titulo">Rotas</span>
                     </button>
-                    <button class="tab-botao" data-tab="4">
-                        <span class="tab-numero">4</span>
+                    
+                    <!-- Tab Button 4 -->
+                    <button 
+                        class="tab-botao" 
+                        data-tab="4"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="tab-4"
+                        id="tab-button-4"
+                        type="button">
+                        <span class="tab-numero" aria-hidden="true">4</span>
                         <span class="tab-titulo">Aprendizado</span>
                     </button>
-                    <button class="tab-botao" data-tab="5">
-                        <span class="tab-numero">5</span>
+                    
+                    <!-- Tab Button 5 -->
+                    <button 
+                        class="tab-botao" 
+                        data-tab="5"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="tab-5"
+                        id="tab-button-5"
+                        type="button">
+                        <span class="tab-numero" aria-hidden="true">5</span>
                         <span class="tab-titulo">Comunidade</span>
                     </button>
+                    
                 </div>
                 
                 <!-- Conteúdo das Tabs -->
@@ -290,7 +466,7 @@
                                     Curadoria do melhor conteúdo gratuito da web.
                                 </p>
                                 <ul class="lista-recursos-tab">
-                                    <li><i class="fas fa-graduation-cap"></i> <strong>Módulo Zero:</strong> Aprender a aprender</li>
+                                    <li><i class="fas fa-graduation-cap"></i> <strong>Módulo Zero:</strong> Aprender o básico</li>
                                     <li><i class="fas fa-video"></i> <strong>Módulos Técnicos:</strong> Vídeos e práticas</li>
                                     <li><i class="fas fa-trophy"></i> <strong>Gamificação:</strong> Badges e certificados</li>
                                 </ul>
@@ -395,104 +571,179 @@
             </div>
         </section>
         
-        <!-- SEÇÃO: Depoimentos -->
-        <section class="secao-depoimentos" id="depoimentos">
+        <!-- ============================================
+             SEÇÃO DEPOIMENTOS - Prova Social
+             ============================================
+             Testimonials aumentam credibilidade e confiança.
+             Utiliza elemento <article> para cada depoimento
+             independente, e <blockquote> para citações.
+             ============================================ -->
+        <section class="secao-depoimentos" id="depoimentos" aria-labelledby="titulo-depoimentos">
             <div class="container">
-                <!-- Cabeçalho da seção -->
-                <div class="cabecalho-secao">
-                    <span class="icone-secao">💬</span>
-                    <h2 class="titulo-secao">Histórias de Sucesso</h2>
+                
+                <!-- HEADER DA SEÇÃO -->
+                <header class="cabecalho-secao">
+                    <span class="icone-secao" role="img" aria-label="Comentário">💬</span>
+                    <h2 class="titulo-secao" id="titulo-depoimentos">Histórias de Sucesso</h2>
                     <p class="subtitulo-secao">
                         Pessoas reais que mudaram suas vidas com a Rota Certa
                     </p>
-                </div>
+                </header>
                 
-                <!-- Grade de depoimentos -->
-                <div class="grade-depoimentos">
-                    <!-- Depoimento 1: Ana -->
-                    <article class="cartao-depoimento">
-                        <div class="cabecalho-depoimento">
+                <!-- GRID DE DEPOIMENTOS: 1 coluna mobile, 3 desktop -->
+                <div class="grade-depoimentos" role="list">
+                    
+                    <!-- ========================================
+                         DEPOIMENTO 1: Ana Silva
+                         ======================================== -->
+                    <article class="cartao-depoimento" role="listitem">
+                        
+                        <!-- Header do depoimento com foto e identificação -->
+                        <header class="cabecalho-depoimento">
+                            <!-- Avatar: Foto da pessoa -->
                             <div class="avatar-depoimento">
-                                <img src="assets/ana.jpg" alt="Ana Silva">
+                                <img 
+                                    src="assets/ana.jpg" 
+                                    alt="Foto de Ana Silva"
+                                    loading="lazy"
+                                    width="60"
+                                    height="60">
                             </div>
+                            
+                            <!-- Informações da pessoa -->
                             <div class="info-pessoa">
                                 <h3 class="nome-pessoa">Ana Silva</h3>
-                                <p class="transicao-pessoa">Caixa → Customer Success</p>
+                                <p class="transicao-pessoa">
+                                    <span class="profissao-antiga">Caixa</span> 
+                                    <span aria-hidden="true">→</span> 
+                                    <span class="profissao-nova">Customer Success</span>
+                                </p>
                             </div>
-                        </div>
-                        <blockquote class="texto-depoimento">
+                        </header>
+                        
+                        <!-- Citação: Usa <blockquote> para texto citado -->
+                        <blockquote class="texto-depoimento" cite="Ana Silva">
                             "Trabalhei 8 anos como caixa. Descobri que minha habilidade de lidar com pessoas 
                             valia muito. Hoje sou Analista de Sucesso do Cliente com salário 60% maior!"
                         </blockquote>
-                        <div class="resultado-depoimento">
+                        
+                        <!-- Resultados alcançados -->
+                        <footer class="resultado-depoimento" aria-label="Resultados alcançados">
                             <span class="badge-resultado">✓ 4 meses de transição</span>
                             <span class="badge-resultado">✓ +60% salário</span>
-                        </div>
+                        </footer>
+                        
                     </article>
                     
-                    <!-- Depoimento 2: Carlos -->
-                    <article class="cartao-depoimento">
-                        <div class="cabecalho-depoimento">
+                    <!-- ========================================
+                         DEPOIMENTO 2: Carlos Santos
+                         ======================================== -->
+                    <article class="cartao-depoimento" role="listitem">
+                        <header class="cabecalho-depoimento">
                             <div class="avatar-depoimento">
-                                <img src="assets/carlos.jpg" alt="Carlos Santos">
+                                <img 
+                                    src="assets/carlos.jpg" 
+                                    alt="Foto de Carlos Santos"
+                                    loading="lazy"
+                                    width="60"
+                                    height="60">
                             </div>
                             <div class="info-pessoa">
                                 <h3 class="nome-pessoa">Carlos Santos</h3>
-                                <p class="transicao-pessoa">Telemarketing → Suporte TI</p>
+                                <p class="transicao-pessoa">
+                                    <span class="profissao-antiga">Telemarketing</span> 
+                                    <span aria-hidden="true">→</span> 
+                                    <span class="profissao-nova">Suporte TI</span>
+                                </p>
                             </div>
-                        </div>
-                        <blockquote class="texto-depoimento">
+                        </header>
+                        <blockquote class="texto-depoimento" cite="Carlos Santos">
                             "Sempre gostei de tecnologia mas não sabia por onde começar. 
                             A Rota Certa me mostrou o caminho passo a passo. Hoje trabalho de home office!"
                         </blockquote>
-                        <div class="resultado-depoimento">
+                        <footer class="resultado-depoimento" aria-label="Resultados alcançados">
                             <span class="badge-resultado">✓ 5 meses de transição</span>
                             <span class="badge-resultado">✓ Home office</span>
-                        </div>
+                        </footer>
                     </article>
                     
-                    <!-- Depoimento 3: Maria -->
-                    <article class="cartao-depoimento">
-                        <div class="cabecalho-depoimento">
+                    <!-- ========================================
+                         DEPOIMENTO 3: Maria Oliveira
+                         ======================================== -->
+                    <article class="cartao-depoimento" role="listitem">
+                        <header class="cabecalho-depoimento">
                             <div class="avatar-depoimento">
-                                <img src="assets/maria.jpg" alt="Maria Oliveira">
+                                <img 
+                                    src="assets/maria.jpg" 
+                                    alt="Foto de Maria Oliveira"
+                                    loading="lazy"
+                                    width="60"
+                                    height="60">
                             </div>
                             <div class="info-pessoa">
                                 <h3 class="nome-pessoa">Maria Oliveira</h3>
-                                <p class="transicao-pessoa">Assist. Administrativo → Analista de Dados</p>
+                                <p class="transicao-pessoa">
+                                    <span class="profissao-antiga">Assist. Administrativo</span> 
+                                    <span aria-hidden="true">→</span> 
+                                    <span class="profissao-nova">Analista de Dados</span>
+                                </p>
                             </div>
-                        </div>
-                        <blockquote class="texto-depoimento">
+                        </header>
+                        <blockquote class="texto-depoimento" cite="Maria Oliveira">
                             "Tinha medo de matemática, mas a plataforma me mostrou que eu já tinha 
                             as habilidades necessárias. Aprendi no meu ritmo, no ônibus indo pro trabalho."
                         </blockquote>
-                        <div class="resultado-depoimento">
+                        <footer class="resultado-depoimento" aria-label="Resultados alcançados">
                             <span class="badge-resultado">✓ 6 meses de transição</span>
                             <span class="badge-resultado">✓ +70% salário</span>
-                        </div>
+                        </footer>
                     </article>
                 </div>
             </div>
         </section>
         
-        <!-- SEÇÃO: Diagnóstico (CTA) -->
-        <section class="secao-diagnostico" id="diagnostico">
+        <!-- ============================================
+             SEÇÃO DIAGNÓSTICO - Ferramenta Interativa
+             ============================================
+             CTA (Call-to-Action) principal da landing page.
+             Termômetro de risco interativo controlado via
+             JavaScript (menu.js). Usa data attributes para
+             armazenar percentual de risco de cada profissão.
+             ============================================ -->
+        <section class="secao-diagnostico" id="diagnostico" aria-labelledby="titulo-diagnostico">
             <div class="container">
                 <div class="conteudo-diagnostico">
-                    <h2 class="titulo-diagnostico">Descubra o Risco da Sua Profissão</h2>
+                    
+                    <!-- TÍTULO DA SEÇÃO -->
+                    <h2 class="titulo-diagnostico" id="titulo-diagnostico">
+                        Descubra o Risco da Sua Profissão
+                    </h2>
                     <p class="subtitulo-diagnostico">
                         Selecione sua profissão atual e veja instantaneamente o nível de risco de automação
                     </p>
                     
-                    <!-- Ferramenta de diagnóstico simplificada -->
-                    <div class="ferramenta-diagnostico">
-                        <!-- Seletor de profissão -->
+                    <!-- FERRAMENTA INTERATIVA -->
+                    <!-- Card branco com selector e resultado dinâmico -->
+                    <div class="ferramenta-diagnostico" role="application" aria-label="Calculadora de risco profissional">
+                        
+                        <!-- GRUPO DE SELEÇÃO: Dropdown com profissões -->
                         <div class="grupo-selecao">
+                            
+                            <!-- Label associado ao select via for/id -->
                             <label for="seletorProfissao" class="label-diagnostico">
                                 Qual sua profissão atual?
                             </label>
-                            <select id="seletorProfissao" class="select-profissao">
+                            
+                            <!-- SELECT: data-risco é lido pelo JavaScript para calcular -->
+                            <select 
+                                id="seletorProfissao" 
+                                class="select-profissao"
+                                aria-describedby="nota-profissao"
+                                required>
+                                <!-- Opção padrão (placeholder) -->
                                 <option value="">Selecione sua profissão...</option>
+                                
+                                <!-- Cada option tem data-risco com percentual de automação -->
                                 <option value="caixa" data-risco="85">Caixa de Supermercado/Loja</option>
                                 <option value="telemarketing" data-risco="95">Operador de Telemarketing</option>
                                 <option value="recepcionista" data-risco="75">Recepcionista</option>
@@ -500,57 +751,81 @@
                                 <option value="atendente" data-risco="70">Atendente de Loja</option>
                                 <option value="motorista" data-risco="65">Motorista de Transporte</option>
                                 <option value="operador-maquina" data-risco="90">Operador de Máquinas</option>
-                                <option value="faxineiro" data-risco="60">Auxiliar de Limpeza</option>
+                                <option value="faxineiro" data-risco="35">Auxiliar de Limpeza</option>
                                 <option value="bancario" data-risco="75">Bancário (Caixa/Atendimento)</option>
                                 <option value="vendedor" data-risco="55">Vendedor</option>
                             </select>
-                            <small class="nota-formulario">💡 Não encontrou sua profissão? Você poderá fornecer mais informações na próxima página através do nosso formulário de inscrição completo e se atualizar sobre sua situação pessoal.</small>
+                            
+                            <!-- Nota auxiliar descrita por aria-describedby -->
+                            <small class="nota-formulario" id="nota-profissao">
+                                💡 Não encontrou sua profissão? Você poderá fornecer mais informações na próxima 
+                                página através do nosso formulário de inscrição completo e se atualizar sobre sua 
+                                situação pessoal.
+                            </small>
+                            
                         </div>
                         
-                        <!-- Termômetro interativo de risco -->
-                        <div class="resultado-diagnostico" id="resultadoDiagnostico" style="display: none;">
+                        <!-- RESULTADO DO DIAGNÓSTICO -->
+                        <!-- Inicialmente escondido (display: none), mostrado via JavaScript -->
+                        <div 
+                            class="resultado-diagnostico" 
+                            id="resultadoDiagnostico" 
+                            style="display: none;"
+                            role="region"
+                            aria-live="polite"
+                            aria-atomic="true">
+                            
+                            <!-- Informações do risco calculado -->
                             <div class="info-risco">
                                 <h3 class="titulo-resultado">Nível de Risco de Automação:</h3>
-                                <div class="percentual-risco">
+                                
+                                <!-- Percentual grande em destaque -->
+                                <div class="percentual-risco" aria-label="Percentual de risco">
                                     <span class="numero-percentual" id="numeroPercentual">0</span>
                                     <span class="simbolo-percentual">%</span>
                                 </div>
-                                <p class="descricao-risco" id="descricaoRisco"></p>
+                                
+                                <!-- Descrição textual do risco (preenchida via JS) -->
+                                <p class="descricao-risco" id="descricaoRisco" role="status"></p>
                             </div>
                             
-                            <!-- Barra de progresso animada -->
-                            <div class="barra-risco">
-                                <div class="preenchimento-barra" id="preenchimentoBarra">
-                                    <span class="icone-ponteiro">📍</span>
-                                </div>
+                            <!-- BARRA DE PROGRESSO: Visualização do risco -->
+                            <div class="barra-risco" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                <!-- Preenchimento animado - largura definida via JS -->
+                                <div class="preenchimento-barra" id="preenchimentoBarra"></div>
                             </div>
                             
-                            <!-- Legenda da barra -->
-                            <div class="legenda-barra">
-                                <span class="legenda-item baixo">
-                                    <span class="bolinha verde"></span>
+                            <!-- LEGENDA: Explicação das cores -->
+                            <div class="legenda-barra" role="list" aria-label="Legenda de níveis de risco">
+                                <span class="legenda-item baixo" role="listitem">
+                                    <span class="bolinha verde" aria-hidden="true"></span>
                                     Baixo (0-40%)
                                 </span>
-                                <span class="legenda-item medio">
-                                    <span class="bolinha amarelo"></span>
+                                <span class="legenda-item medio" role="listitem">
+                                    <span class="bolinha amarelo" aria-hidden="true"></span>
                                     Médio (41-70%)
                                 </span>
-                                <span class="legenda-item alto">
-                                    <span class="bolinha vermelho"></span>
+                                <span class="legenda-item alto" role="listitem">
+                                    <span class="bolinha vermelho" aria-hidden="true"></span>
                                     Alto (71-100%)
                                 </span>
                             </div>
                             
-                            <!-- Botão de ação -->
-                            <a href="#como-funciona" class="botao-principal botao-grande botao-completo">
+                            <!-- CTA: Botão que leva à seção explicativa -->
+                            <a 
+                                href="#como-funciona" 
+                                class="botao-principal botao-grande botao-completo"
+                                role="button"
+                                aria-label="Ir para seção Como Funciona">
                                 Ver Como Fazer a Transição
-                                <i class="fas fa-arrow-right"></i>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
+                            
                         </div>
                         
-                        <!-- Mensagem inicial -->
-                        <div class="mensagem-inicial" id="mensagemInicial">
-                            <div class="icone-grande">🎯</div>
+                        <!-- MENSAGEM INICIAL: Estado vazio antes de selecionar -->
+                        <div class="mensagem-inicial" id="mensagemInicial" aria-live="polite">
+                            <div class="icone-grande" role="img" aria-label="Alvo">🎯</div>
                             <p>Selecione sua profissão acima para ver o diagnóstico instantâneo</p>
                         </div>
                     </div>
@@ -610,73 +885,128 @@
         
     </main>
     
-    <!-- ========== RODAPÉ ========== -->
-    <footer class="rodape">
+    <!-- ============================================
+         FOOTER - Rodapé com Links e Informações
+         ============================================
+         Elemento semântico <footer> contém informações
+         complementares, links de navegação secundária,
+         formulário de newsletter e copyright.
+         Layout: Grid responsivo (1-2-4 colunas)
+         ============================================ -->
+    <footer class="rodape" role="contentinfo">
         <div class="container">
+            
+            <!-- GRID DE COLUNAS: Responsivo -->
             <div class="conteudo-rodape">
-                <!-- Coluna 1: Sobre -->
+                
+                <!-- ========================================
+                     COLUNA 1: Sobre o Projeto
+                     ======================================== -->
                 <div class="coluna-rodape coluna-principal">
-                    <!-- Logo no rodapé -->
-                    <div class="logo-rodape">
-                        <i class="fas fa-route icone-logo-rodape"></i>
+                    
+                    <!-- Logo no rodapé (mesma da header) -->
+                    <div class="logo-rodape" aria-label="Logo Rota Certa">
+                        <i class="fas fa-route icone-logo-rodape" aria-hidden="true"></i>
                         <span class="texto-logo-rodape">
                             <span class="texto-rota">Rota</span><span class="texto-certa">Certa</span>
                         </span>
                     </div>
+                    
+                    <!-- Descrição resumida do projeto -->
                     <p class="texto-rodape">
                         O GPS da Requalificação Profissional. Ajudando trabalhadores 
                         a encontrarem seu caminho na era da automação.
                     </p>
+                    
                 </div>
                 
-                <!-- Coluna 2: Links -->
+                <!-- ========================================
+                     COLUNA 2: Links Rápidos
+                     ======================================== -->
                 <div class="coluna-rodape">
                     <h4 class="subtitulo-rodape">Links Rápidos</h4>
-                    <ul class="lista-rodape">
-                        <li><a href="pages/sobre.html">Sobre Nós</a></li>
-                        <li><a href="pages/faq.html">Perguntas Frequentes</a></li>
-                        <li><a href="pages/integrantes.html">Nossa Equipe</a></li>
-                        <li><a href="pages/contato.html">Contato</a></li>
+                    <!-- Lista de navegação secundária -->
+                    <ul class="lista-rodape" role="list">
+                        <li><a href="pages/sobre.html" title="Conheça nossa missão">Sobre Nós</a></li>
+                        <li><a href="pages/faq.html" title="Perguntas mais frequentes">Perguntas Frequentes</a></li>
+                        <li><a href="pages/integrantes.html" title="Conheça a equipe">Nossa Equipe</a></li>
+                        <li><a href="pages/contato.html" title="Entre em contato conosco">Contato</a></li>
                     </ul>
                 </div>
                 
-                <!-- Coluna 3: Recursos -->
+                <!-- ========================================
+                     COLUNA 3: Recursos e Ferramentas
+                     ======================================== -->
                 <div class="coluna-rodape">
                     <h4 class="subtitulo-rodape">Recursos</h4>
-                    <ul class="lista-rodape">
-                        <li><a href="#como-funciona">Como Funciona</a></li>
-                        <li><a href="#diagnostico">Fazer Diagnóstico</a></li>
-                        <li><a href="#historia">História de Sucesso</a></li>
+                    <!-- Links para âncoras da página atual -->
+                    <ul class="lista-rodape" role="list">
+                        <li><a href="#como-funciona" title="Veja as 5 etapas">Como Funciona</a></li>
+                        <li><a href="#diagnostico" title="Calcule seu risco">Fazer Diagnóstico</a></li>
+                        <li><a href="#depoimentos" title="Casos de sucesso">História de Sucesso</a></li>
                     </ul>
                 </div>
                 
-                <!-- Coluna 4: Newsletter -->
+                <!-- ========================================
+                     COLUNA 4: Newsletter
+                     ======================================== -->
                 <div class="coluna-rodape">
                     <h4 class="subtitulo-rodape">Fique por Dentro</h4>
-                    <p class="texto-rodape-pequeno">Receba novidades sobre carreira.</p>
-                    <form class="formulario-newsletter">
+                    <p class="texto-rodape-pequeno">Receba novidades sobre sua carreira.</p>
+                    
+                    <!-- Formulário de inscrição -->
+                    <form 
+                        class="formulario-newsletter" 
+                        action="#" 
+                        method="post"
+                        aria-label="Formulário de inscrição na newsletter">
+                        
+                        <!-- Input de email -->
                         <input 
                             type="email" 
+                            name="email"
+                            id="newsletter-email"
                             placeholder="seu@email.com" 
                             class="campo-newsletter"
-                            required
-                        >
-                        <button type="submit" class="botao-newsletter"><i class="fas fa-paper-plane"></i></button>
+                            aria-label="Seu endereço de email"
+                            required>
+                        
+                        <!-- Botão de envio -->
+                        <button 
+                            type="submit" 
+                            class="botao-newsletter"
+                            aria-label="Assinar newsletter">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
                     </form>
                 </div>
+                
             </div>
             
-            <!-- Barra inferior do rodapé -->
+            <!-- ========================================
+                 BARRA INFERIOR: Copyright
+                 ======================================== -->
             <div class="rodape-inferior">
                 <p class="texto-copyright">
-                    &copy; 2025 Rota Certa - GPS da Requalificação Profissional. 
-                    Todos os direitos reservados.
+                    <small>
+                        &copy; 2025 Rota Certa - GPS da Requalificação Profissional. 
+                        Todos os direitos reservados.
+                    </small>
                 </p>
             </div>
+            
         </div>
     </footer>
+    <!-- FIM DO FOOTER -->
     
-    <!-- ========== SCRIPTS ========== -->
+    <!-- ============================================
+         SCRIPTS JAVASCRIPT
+         ============================================
+         Carregados no final do body para não bloquear
+         o carregamento da página (melhor performance).
+         ============================================ -->
+    
+    <!-- Menu interativo: controla menu mobile e tabs -->
     <script src="js/menu.js"></script>
     
 </body>
