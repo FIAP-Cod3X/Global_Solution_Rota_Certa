@@ -26,6 +26,15 @@
     <title>Rota Certa - O GPS da Requalificação Profissional</title>
     
     <!-- ============================================
+         FAVICON - Ícone da Aba do Navegador
+         ============================================ -->
+    <!-- Favicon SVG: Suporta modo claro/escuro e é escalável -->
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
+    
+    <!-- Fallback PNG para navegadores antigos -->
+    <link rel="alternate icon" type="image/png" href="./assets/logo.ico">
+    
+    <!-- ============================================
          FONTES EXTERNAS - Google Fonts
          ============================================ -->
     <!-- Preconnect: Estabelece conexão prévia com o servidor para carregar fontes mais rápido -->
@@ -813,7 +822,7 @@
                             
                             <!-- CTA: Botão que leva à seção explicativa -->
                             <a 
-                                href="#como-funciona" 
+                                href="./pages/rota.html" 
                                 class="botao-principal botao-grande botao-completo"
                                 role="button"
                                 aria-label="Ir para seção Como Funciona">
@@ -942,8 +951,8 @@
                     <!-- Links para âncoras da página atual -->
                     <ul class="lista-rodape" role="list">
                         <li><a href="#como-funciona" title="Veja as 5 etapas">Como Funciona</a></li>
-                        <li><a href="#diagnostico" title="Calcule seu risco">Fazer Diagnóstico</a></li>
                         <li><a href="#depoimentos" title="Casos de sucesso">História de Sucesso</a></li>
+                        <li><a href="#diagnostico" title="Calcule seu risco">Fazer Diagnóstico</a></li>
                     </ul>
                 </div>
                 
@@ -1000,6 +1009,13 @@
     <!-- FIM DO FOOTER -->
     
     <!-- ============================================
+         BOTÃO VOLTAR AO TOPO
+         ============================================ -->
+    <button class="botao-voltar-topo" aria-label="Voltar ao topo" title="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- ============================================
          SCRIPTS JAVASCRIPT
          ============================================
          Carregados no final do body para não bloquear
@@ -1007,7 +1023,9 @@
          ============================================ -->
     
     <!-- Menu interativo: controla menu mobile e tabs -->
-    <script src="js/menu.js"></script>
-    
+    <script src="./js/menu.js"></script>
+    <script src="./js/geral.js"></script>
+    <script src="./js/index.js"></script>
+
 </body>
 </html>
