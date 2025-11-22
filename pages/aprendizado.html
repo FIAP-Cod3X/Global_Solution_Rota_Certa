@@ -156,7 +156,123 @@
          Importante para acessibilidade e SEO.
          ============================================ -->
     <main id="conteudo-principal" role="main">
-
+    
+        <!-- ============================================
+             SEÇÃO HERO - Banner com Perfil do Usuário
+             ============================================
+             Apresenta informações personalizadas do usuário,
+             incluindo perfil atual, nova rota profissional
+             e card de progresso geral com estatísticas.
+             Layout: Grid 2 colunas (conteúdo + progresso)
+         ============================================ -->
+    <section class="hero-aprendizado" id="hero" aria-labelledby="titulo-hero-aprendizado">
+        <div class="container">
+            <div class="hero-aprendizado-grid">
+                
+                <!-- ========================================
+                     COLUNA 1: Perfil e Boas-vindas
+                     ========================================
+                     Informações personalizadas do usuário
+                     ======================================== -->
+                <div class="hero-aprendizado-conteudo">
+                    <!-- Badge identificador -->
+                    <div class="badge-hero-aprendizado" role="img" aria-label="Jornada Personalizada">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i> Sua Jornada Personalizada
+                    </div>
+                    <h1 class="titulo-hero-aprendizado">
+                        Bem-vindo à Sua <span class="destaque-laranja">Nova Carreira</span>
+                    </h1>
+                    <p class="subtitulo-hero-aprendizado">
+                        Baseado no seu perfil, criamos uma trilha de aprendizado inteligente que vai te 
+                        levar do <strong>iniciante ao profissional qualificado</strong> em sua nova área.
+                    </p>
+                    
+                    <!-- Info do Perfil Detectado -->
+                    <div class="perfil-detectado">
+                        <div class="perfil-detectado-item">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <strong>Perfil Atual</strong>
+                                <span id="perfilAtual">Operador de Telemarketing</span>
+                            </div>
+                        </div>
+                        <div class="perfil-detectado-item">
+                            <i class="fas fa-route"></i>
+                            <div>
+                                <strong>Nova Rota</strong>
+                                <span id="novaRota">Desenvolvedor Web</span>
+                            </div>
+                        </div>
+                        <div class="perfil-detectado-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Duração Estimada</strong>
+                                <span id="duracaoEstimada">12-18 meses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========================================
+                     COLUNA 2: Card de Progresso Geral
+                     ========================================
+                     Visualização do progresso do usuário
+                     com círculo animado e estatísticas.
+                     Dados atualizados via JavaScript.
+                     ======================================== -->
+                <div class="card-progresso-geral" role="region" aria-label="Progresso geral">
+                    <div class="card-progresso-header">
+                        <h3>Seu Progresso</h3>
+                        <span class="nivel-badge">Nível 1 - Iniciante</span>
+                    </div>
+                    
+                    <!-- Círculo de Progresso -->
+                    <div class="circulo-progresso-wrapper">
+                        <svg class="circulo-progresso" viewBox="0 0 200 200">
+                            <circle class="circulo-fundo" cx="100" cy="100" r="90"></circle>
+                            <circle class="circulo-preenchimento" cx="100" cy="100" r="90" id="circuloProgresso"></circle>
+                        </svg>
+                        <div class="progresso-texto">
+                            <span class="progresso-numero" id="progressoNumero">0</span>
+                            <span class="progresso-simbolo">%</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Estatísticas -->
+                    <div class="stats-progresso">
+                        <div class="stat-progresso-item">
+                            <i class="fas fa-book-open"></i>
+                            <div>
+                                <strong id="modulosConcluidos">0</strong>
+                                <span>Módulos Concluídos</span>
+                            </div>
+                        </div>
+                        <div class="stat-progresso-item">
+                            <i class="fas fa-fire"></i>
+                            <div>
+                                <strong id="diasSequencia">0</strong>
+                                <span>Dias de Sequência</span>
+                            </div>
+                        </div>
+                        <div class="stat-progresso-item">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong id="certificados">0</strong>
+                                <span>Certificados</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="botao-principal botao-completo">
+                        Continuar Aprendendo <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- FIM DA SEÇÃO HERO -->
+  
     </main>
     <!-- FIM DO MAIN -->
     
