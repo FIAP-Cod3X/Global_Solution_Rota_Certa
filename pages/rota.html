@@ -851,6 +851,141 @@
                 </div>
                 <!-- FIM DA TELA DE CARREGAMENTO -->
                 
+                <!-- ============================================
+                     TELA DE RESULTADOS
+                     ============================================
+                     Exibe as recomendações personalizadas de
+                     carreiras com base nas respostas do questionário.
+                     Contém resumo do perfil, cards de carreira,
+                     próximos passos e botões de ação.
+                     Populado dinamicamente via JavaScript.
+                     ============================================ -->
+                <div class="tela-resultados" id="telaResultados" style="display: none;" role="region" aria-labelledby="titulo-resultados">
+                    
+                    <!-- Cabeçalho dos Resultados -->
+                    <div class="resultados-cabecalho">
+                        
+                        <!-- Badge de sucesso -->
+                        <div class="badge-sucesso" role="status">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>Análise Completa</span>
+                        </div>
+                        
+                        <!-- Título principal dos resultados -->
+                        <h2 class="titulo-resultados" id="titulo-resultados">Suas Rotas Personalizadas</h2>
+                        
+                        <!-- Subtítulo explicativo -->
+                        <p class="subtitulo-resultados">Baseado no seu perfil, identificamos as melhores oportunidades para você</p>
+                        
+                    </div>
+                    
+                    <!-- ========================================
+                         RESUMO DO PERFIL
+                         ========================================
+                         Exibe as principais habilidades selecionadas
+                         e a compatibilidade geral do usuário.
+                         ======================================== -->
+                    <div class="resumo-perfil" role="region" aria-labelledby="titulo-resumo-perfil">
+                        <h3 id="titulo-resumo-perfil">
+                            <i class="fas fa-user" aria-hidden="true"></i> 
+                            Resumo do Seu Perfil
+                        </h3>
+                        <div class="perfil-grid">
+                            
+                            <!-- Principais habilidades (populadas via JavaScript) -->
+                            <div class="perfil-item">
+                                <span class="perfil-label">Principais Habilidades:</span>
+                                <div class="perfil-tags" id="resumoHabilidades" role="list"></div>
+                            </div>
+                            
+                            <!-- Compatibilidade geral calculada -->
+                            <div class="perfil-item">
+                                <span class="perfil-label">Compatibilidade Geral:</span>
+                                <div class="compatibilidade-geral" id="compatibilidadeGeral" aria-live="polite"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- ========================================
+                         RECOMENDAÇÕES DE CARREIRAS
+                         ========================================
+                         Cards com as carreiras recomendadas,
+                         ordenadas por compatibilidade.
+                         Gerados dinamicamente via JavaScript.
+                         ======================================== -->
+                    <div class="recomendacoes-container" id="recomendacoesContainer" role="list" aria-label="Recomendações de carreiras">
+                        <!-- Serão inseridas dinamicamente pelo JavaScript -->
+                    </div>
+                    
+                    <!-- Próximos Passos -->
+                    <div class="proximos-passos">
+                        <h3><i class="fas fa-map-signs"></i> Seus Próximos Passos</h3>
+                        <div class="passos-grid">
+                            <div class="passo-card">
+                                <div class="passo-numero">1</div>
+                                <h4>Escolha Sua Rota</h4>
+                                <p>Analise as recomendações e escolha a que mais combina com você</p>
+                            </div>
+                            <div class="passo-card">
+                                <div class="passo-numero">2</div>
+                                <h4>Comece a Aprender</h4>
+                                <p>Acesse nossas trilhas de micro-learning e comece hoje mesmo</p>
+                            </div>
+                            <div class="passo-card">
+                                <div class="passo-numero">3</div>
+                                <h4>Entre na Comunidade</h4>
+                                <p>Conecte-se com pessoas na mesma jornada que você</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ========================================
+                         AÇÕES FINAIS
+                         ========================================
+                         Botões de ação após visualizar resultados:
+                         Salvar PDF, Ver trilhas, Refazer questionário.
+                         ======================================== -->
+                    <div class="acoes-finais">
+                        
+                        <!-- Botão: Salvar PDF -->
+                        <button 
+                            type="button" 
+                            class="botao-principal botao-grande" 
+                            onclick="exportarPDF()"
+                            aria-label="Salvar resultados em formato PDF">
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                            Salvar Resultados (PDF)
+                        </button>
+                        
+                        <!-- Link: Trilhas de aprendizado -->
+                        <a 
+                            href="./aprendizado.html" 
+                            class="botao-secundario botao-grande"
+                            aria-label="Acessar trilhas de aprendizado personalizadas">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            Ver Trilhas de Aprendizado
+                        </a>
+                        
+                        <!-- Botão: Refazer questionário -->
+                        <button 
+                            type="button" 
+                            class="botao-outline botao-grande" 
+                            onclick="location.reload()"
+                            aria-label="Recarregar página para refazer questionário">
+                            <i class="fas fa-redo" aria-hidden="true"></i>
+                            Refazer Questionário
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+                <!-- FIM DA TELA DE RESULTADOS -->
+                
+            </div>
+        </section>
+        <!-- FIM DA SEÇÃO QUESTIONÁRIO -->
+        
     </main>
     <!-- FIM DO MAIN -->
     
