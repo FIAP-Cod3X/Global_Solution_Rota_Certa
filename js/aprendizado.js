@@ -130,3 +130,53 @@ function filtrarPorAba(tipo) {
         }
     });
 }
+
+// ========================================
+// SISTEMA DE FILTROS E BUSCA
+// ========================================
+
+function inicializarFiltros() {
+    const campoBusca = document.getElementById('campoBusca');
+    const filtroCategoria = document.getElementById('filtroCategoria');
+    const filtroNivel = document.getElementById('filtroNivel');
+    
+    if (campoBusca) {
+        campoBusca.addEventListener('input', aplicarFiltros);
+    }
+    
+    if (filtroCategoria) {
+        filtroCategoria.addEventListener('change', aplicarFiltros);
+    }
+    
+    if (filtroNivel) {
+        filtroNivel.addEventListener('change', aplicarFiltros);
+    }
+}
+
+function aplicarFiltros() {
+    const textoBusca = document.getElementById('campoBusca')?.value.toLowerCase() || '';
+    const categoriaSelecionada = document.getElementById('filtroCategoria')?.value || '';
+    const nivelSelecionado = document.getElementById('filtroNivel')?.value || '';
+    
+    const modulos = document.querySelectorAll('.card-modulo');
+    
+    modulos.forEach(modulo => {
+        const titulo = modulo.querySelector('.card-modulo-titulo')?.textContent.toLowerCase() || '';
+        const descricao = modulo.querySelector('.card-modulo-descricao')?.textContent.toLowerCase() || '';
+        const categoria = modulo.dataset.categoria || '';
+        const nivel = modulo.dataset.nivel || '';
+        
+        // Verifica se passa nos filtros
+        const passaBusca = !textoBusca || titulo.includes(textoBusca) || descricao.includes(textoBusca);
+        const passaCategoria = !categoriaSelecionada || categoria === categoriaSelecionada;
+        const passaNivel = !nivelSelecionado || nivel === nivelSelecionado;
+        
+        // Mostra ou esconde
+        if (passaBusca && passaCategoria && passaNivel) {
+            modulo.style.display = '';
+            modulo.style.animation = 'fadeInUp 0.4s ease forwards';
+        } else {
+            modulo.style.display = 'none';
+        }
+    });
+}
