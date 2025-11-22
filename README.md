@@ -297,7 +297,7 @@ Para executar este projeto, você precisa apenas de:
 
 1. **Clone o repositório**
 ```bash
-git clone https://github.com/seu-usuario/rota-certa.git
+https://github.com/FIAP-Cod3X/Global_Solution_Rota_Certa.git
 ```
 
 2. **Navegue até o diretório do projeto**
@@ -315,13 +315,10 @@ cd rota-certa
 # Clique com botão direito em index.html > "Open with Live Server"
 ```
 
-**Opção 3**: Use um servidor HTTP simples com Python
-```bash
-# Python 3
-python -m http.server 8000
+**Opção 3**: Acesse nosso site hospedado pelo GitHub:
 
-# Acesse: http://localhost:8000
-```
+<a href="https://fiap-cod3x.github.io/Global_Solution_Rota_Certa/">Rota Certa</a>
+
 
 ### Navegação
 
@@ -356,9 +353,9 @@ O site possui as seguintes páginas completas:
 
 ### 🌐 Repositório do Projeto
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pabloedinha/Global_Solution_Rota_Certa)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FIAP-Cod3X/Global_Solution_Rota_Certa)
 
-**URL Completa**: `https://github.com/pabloedinha/Global_Solution_Rota_Certa`
+**URL Completa**: `https://github.com/FIAP-Cod3X/Global_Solution_Rota_Certa`
 
 ### 📚 Recursos Adicionais
 
@@ -372,7 +369,7 @@ O site possui as seguintes páginas completas:
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido como parte do **Global Solution 2024** da **FIAP** para fins acadêmicos.
+Este projeto foi desenvolvido como parte do **Global Solution 2025** da **FIAP** para fins acadêmicos.
 
 ---
 
