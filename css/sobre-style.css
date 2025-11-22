@@ -811,6 +811,7 @@
     
     .stat-hero-sobre {
         width: 100%;
+        text-align: center;
     }
     
     .timeline-jornada::before {
