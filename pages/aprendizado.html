@@ -331,7 +331,323 @@
         </div>
     </section>
     <!-- FIM DA SEÇÃO FILTROS -->
-   
+    
+    <!-- ============================================
+         SEÇÃO TRILHA DE APRENDIZADO - Fase por Fase
+         ============================================
+         Sistema de gamificação com 4 fases progressivas.
+         Cada fase contém múltiplos módulos que devem ser
+         completados sequencialmente. Fases são desbloqueadas
+         conforme o usuário progride.
+         Pattern: Progressive Disclosure + Gamification
+         ============================================ -->
+    <section class="secao-trilha" id="painelTrilha" aria-labelledby="titulo-trilha">
+        <div class="container">
+            
+            <!-- CABEÇALHO DA SEÇÃO -->
+            <div class="cabecalho-secao">
+                <span class="icone-secao" aria-hidden="true">🎯</span>
+                <h2 class="titulo-secao" id="titulo-trilha">Sua Trilha Inteligente</h2>
+                <p class="subtitulo-secao">
+                    Programe sua jornada em 4 fases estruturadas. Complete cada fase para desbloquear a próxima.
+                </p>
+            </div>
+            
+            <!-- ========================================
+                 FASE 1: FUNDAMENTOS ESSENCIAIS
+                 ========================================
+                 Primeira fase da trilha com 6 módulos.
+                 Ensina conceitos básicos de programação,
+                 HTML, CSS, JavaScript, Git e Design Responsivo.
+                 Finaliza com projeto prático de portfólio.
+                 ======================================== -->
+            <div class="fase-trilha" data-fase="1" role="region" aria-labelledby="titulo-fase-1">
+                <div class="fase-header">
+                    <div class="fase-info">
+                        <span class="fase-numero">FASE 1</span>
+                        <h3 class="fase-titulo">Fundamentos Essenciais</h3>
+                        <p class="fase-descricao">Construa uma base sólida com habilidades fundamentais</p>
+                    </div>
+                    <div class="fase-status">
+                        <div class="fase-progresso-bar">
+                            <div class="fase-progresso-preenchimento" style="width: 0%"></div>
+                        </div>
+                        <span class="fase-progresso-texto">0 de 6 módulos</span>
+                    </div>
+                </div>
+                
+                <!-- GRID DE MÓDULOS: Cards de cursos -->
+                <!-- System: Desbloqueio sequencial via JavaScript -->
+                <div class="grade-modulos" role="list">
+                    
+                    <!-- ========================================
+                         MÓDULO 1: Lógica de Programação
+                         Status: Disponível (primeiro módulo sempre liberado)
+                         ======================================== -->
+                    <article class="card-modulo disponivel" data-modulo="1" data-categoria="fundamentos" data-nivel="iniciante" role="listitem">
+                        <div class="card-modulo-badge">
+                            <span class="badge-categoria">Fundamentos</span>
+                            <span class="badge-nivel iniciante">Iniciante</span>
+                        </div>
+                        
+                        <div class="card-modulo-icone">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        
+                        <h4 class="card-modulo-titulo">Lógica de Programação</h4>
+                        <p class="card-modulo-descricao">
+                            Aprenda a pensar como um programador. Algoritmos, variáveis e estruturas básicas.
+                        </p>
+                        
+                        <div class="card-modulo-info">
+                            <span><i class="fas fa-clock"></i> 4 semanas</span>
+                            <span><i class="fas fa-book"></i> 28 aulas</span>
+                            <span><i class="fas fa-video"></i> 12h</span>
+                        </div>
+                        
+                        <div class="card-modulo-footer">
+                            <button class="botao-modulo botao-iniciar">
+                                <i class="fas fa-play"></i> Iniciar Módulo
+                            </button>
+                        </div>
+                    </article>
+                    
+                    <!-- Módulo 2 -->
+                    <article class="card-modulo bloqueado" data-modulo="2" data-categoria="fundamentos" data-nivel="iniciante">
+                        <div class="card-modulo-badge">
+                            <span class="badge-categoria">Fundamentos</span>
+                            <span class="badge-nivel iniciante">Iniciante</span>
+                        </div>
+                        
+                        <div class="card-modulo-icone bloqueado-icone">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        
+                        <h4 class="card-modulo-titulo">HTML5 & CSS3 Básico</h4>
+                        <p class="card-modulo-descricao">
+                            Crie suas primeiras páginas web. Estrutura HTML e estilização com CSS.
+                        </p>
+                        
+                        <div class="card-modulo-info">
+                            <span><i class="fas fa-clock"></i> 5 semanas</span>
+                            <span><i class="fas fa-book"></i> 35 aulas</span>
+                            <span><i class="fas fa-video"></i> 15h</span>
+                        </div>
+                        
+                        <div class="card-modulo-footer">
+                            <span class="texto-bloqueado">
+                                <i class="fas fa-lock"></i> Complete o módulo anterior
+                            </span>
+                        </div>
+                    </article>
+                    
+                    <!-- Módulo 3 -->
+                    <article class="card-modulo bloqueado" data-modulo="3" data-categoria="fundamentos" data-nivel="iniciante">
+                        <div class="card-modulo-badge">
+                            <span class="badge-categoria">Fundamentos</span>
+                            <span class="badge-nivel iniciante">Iniciante</span>
+                        </div>
+                        
+                        <div class="card-modulo-icone bloqueado-icone">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        
+                        <h4 class="card-modulo-titulo">JavaScript Essencial</h4>
+                        <p class="card-modulo-descricao">
+                            Dê vida às suas páginas com interatividade. Fundamentos de JavaScript moderno.
+                        </p>
+                        
+                        <div class="card-modulo-info">
+                            <span><i class="fas fa-clock"></i> 6 semanas</span>
+                            <span><i class="fas fa-book"></i> 42 aulas</span>
+                            <span><i class="fas fa-video"></i> 20h</span>
+                        </div>
+                        
+                        <div class="card-modulo-footer">
+                            <span class="texto-bloqueado">
+                                <i class="fas fa-lock"></i> Complete o módulo anterior
+                            </span>
+                        </div>
+                    </article>
+                    
+                    <!-- Módulo 4 -->
+                    <article class="card-modulo bloqueado" data-modulo="4" data-categoria="fundamentos" data-nivel="intermediario">
+                        <div class="card-modulo-badge">
+                            <span class="badge-categoria">Fundamentos</span>
+                            <span class="badge-nivel intermediario">Intermediário</span>
+                        </div>
+                        
+                        <div class="card-modulo-icone bloqueado-icone">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        
+                        <h4 class="card-modulo-titulo">Git & GitHub</h4>
+                        <p class="card-modulo-descricao">
+                            Controle de versão profissional. Colabore em projetos e construa seu portfólio.
+                        </p>
+                        
+                        <div class="card-modulo-info">
+                            <span><i class="fas fa-clock"></i> 2 semanas</span>
+                            <span><i class="fas fa-book"></i> 14 aulas</span>
+                            <span><i class="fas fa-video"></i> 6h</span>
+                        </div>
+                        
+                        <div class="card-modulo-footer">
+                            <span class="texto-bloqueado">
+                                <i class="fas fa-lock"></i> Complete o módulo anterior
+                            </span>
+                        </div>
+                    </article>
+                    
+                    <!-- Módulo 5 -->
+                    <article class="card-modulo bloqueado" data-modulo="5" data-categoria="fundamentos" data-nivel="intermediario">
+                        <div class="card-modulo-badge">
+                            <span class="badge-categoria">Fundamentos</span>
+                            <span class="badge-nivel intermediario">Intermediário</span>
+                        </div>
+                        
+                        <div class="card-modulo-icone bloqueado-icone">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        
+                        <h4 class="card-modulo-titulo">Design Responsivo</h4>
+                        <p class="card-modulo-descricao">
+                            Crie sites que funcionam em qualquer dispositivo. Mobile-first e flexbox.
+                        </p>
+                        
+                        <div class="card-modulo-info">
+                            <span><i class="fas fa-clock"></i> 3 semanas</span>
+                            <span><i class="fas fa-book"></i> 21 aulas</span>
+                            <span><i class="fas fa-video"></i> 10h</span>
+                        </div>
+                        
+                        <div class="card-modulo-footer">
+                            <span class="texto-bloqueado">
+                                <i class="fas fa-lock"></i> Complete o módulo anterior
+                            </span>
+                        </div>
+                    </article>
+                    
+                    <!-- Módulo 6 - Projeto Prático -->
+                    <article class="card-modulo bloqueado projeto-pratico" data-modulo="6" data-categoria="fundamentos" data-nivel="intermediario">
+                        <div class="card-modulo-badge">
+                            <span class="badge-categoria badge-projeto">🎯 Projeto</span>
+                            <span class="badge-nivel intermediario">Intermediário</span>
+                        </div>
+                        
+                        <div class="card-modulo-icone bloqueado-icone">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        
+                        <h4 class="card-modulo-titulo">Projeto: Site Portfólio Profissional</h4>
+                        <p class="card-modulo-descricao">
+                            Aplique tudo que aprendeu criando seu portfólio pessoal. Projeto guiado passo a passo.
+                        </p>
+                        
+                        <div class="card-modulo-info">
+                            <span><i class="fas fa-clock"></i> 2 semanas</span>
+                            <span><i class="fas fa-tasks"></i> 10 tarefas</span>
+                            <span><i class="fas fa-trophy"></i> Certificado</span>
+                        </div>
+                        
+                        <div class="card-modulo-footer">
+                            <span class="texto-bloqueado">
+                                <i class="fas fa-lock"></i> Complete todos os módulos anteriores
+                            </span>
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+            
+            <!-- ========================================
+                 FASE 2: FRONT-END AVANÇADO
+                 ========================================
+                 Segunda fase (BLOQUEADA inicialmente).
+                 Desbloqueada ao completar 100% da Fase 1.
+                 Frameworks React, Vue, TypeScript, etc.
+                 ======================================== -->
+            <div class="fase-trilha bloqueada" data-fase="2" role="region" aria-labelledby="titulo-fase-2">
+                <div class="fase-header">
+                    <div class="fase-info">
+                        <span class="fase-numero">FASE 2</span>
+                        <h3 class="fase-titulo">Front-End Avançado</h3>
+                        <p class="fase-descricao">Domine frameworks modernos e construa aplicações complexas</p>
+                    </div>
+                    <div class="fase-status">
+                        <div class="fase-progresso-bar">
+                            <div class="fase-progresso-preenchimento" style="width: 0%"></div>
+                        </div>
+                        <span class="fase-progresso-texto">
+                            <i class="fas fa-lock"></i> Bloqueado - Complete a Fase 1
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="grade-modulos grade-modulos-blur">
+                    <div class="modulo-placeholder"></div>
+                    <div class="modulo-placeholder"></div>
+                    <div class="modulo-placeholder"></div>
+                    <div class="modulo-placeholder"></div>
+                </div>
+            </div>
+            
+            <!-- FASE 3: BACK-END E BANCO DE DADOS -->
+            <div class="fase-trilha bloqueada" data-fase="3">
+                <div class="fase-header">
+                    <div class="fase-info">
+                        <span class="fase-numero">FASE 3</span>
+                        <h3 class="fase-titulo">Back-End & Banco de Dados</h3>
+                        <p class="fase-descricao">Crie o cérebro das aplicações com lógica de servidor</p>
+                    </div>
+                    <div class="fase-status">
+                        <div class="fase-progresso-bar">
+                            <div class="fase-progresso-preenchimento" style="width: 0%"></div>
+                        </div>
+                        <span class="fase-progresso-texto">
+                            <i class="fas fa-lock"></i> Bloqueado - Complete a Fase 2
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="grade-modulos grade-modulos-blur">
+                    <div class="modulo-placeholder"></div>
+                    <div class="modulo-placeholder"></div>
+                    <div class="modulo-placeholder"></div>
+                    <div class="modulo-placeholder"></div>
+                </div>
+            </div>
+            
+            <!-- FASE 4: PROJETOS REAIS E EMPREGABILIDADE -->
+            <div class="fase-trilha bloqueada" data-fase="4">
+                <div class="fase-header">
+                    <div class="fase-info">
+                        <span class="fase-numero">FASE 4</span>
+                        <h3 class="fase-titulo">Projetos Reais & Empregabilidade</h3>
+                        <p class="fase-descricao">Construa portfólio profissional e prepare-se para o mercado</p>
+                    </div>
+                    <div class="fase-status">
+                        <div class="fase-progresso-bar">
+                            <div class="fase-progresso-preenchimento" style="width: 0%"></div>
+                        </div>
+                        <span class="fase-progresso-texto">
+                            <i class="fas fa-lock"></i> Bloqueado - Complete a Fase 3
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="grade-modulos grade-modulos-blur">
+                    <div class="modulo-placeholder"></div>
+                    <div class="modulo-placeholder"></div>
+                    <div class="modulo-placeholder"></div>
+                    <div class="modulo-placeholder"></div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- FIM DA SEÇÃO TRILHA -->
+ 
     </main>
     <!-- FIM DO MAIN -->
     
