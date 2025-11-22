@@ -150,6 +150,126 @@
          ============================================ -->
     <main id="conteudo-principal" role="main">
 
+        <!-- ============================================
+             SEÇÃO CARDS DE CONTATO - Canais de Atendimento
+             ============================================
+             Grid de cards apresentando diferentes formas
+             de contato: Email, WhatsApp e Localização.
+             Layout responsivo com 3 colunas.
+             ============================================ -->
+        <section class="secao-cards-contato" id="canais" aria-labelledby="titulo-canais">
+        <div class="container">
+            
+            <!-- TÍTULO DA SEÇÃO -->
+            <h2 class="titulo-secao-centro" id="titulo-canais">
+                Canais de <span class="destaque-verde">Atendimento</span>
+            </h2>
+            
+            <!-- GRID DE CARDS: 3 colunas responsivas -->
+            <div class="grid-cards-contato">
+                
+                <!-- ========================================
+                     CARD EMAIL - Contato por Email
+                     ======================================== -->
+                <div class="card-contato">
+                    <!-- Ícone do card -->
+                    <div class="icone-card-contato" aria-hidden="true">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p class="descricao-card">Envie suas dúvidas e sugestões</p>
+                    
+                    <div class="info-contato-item">
+                        <span class="label-info">Endereço:</span>
+                        <a href="mailto:contato@rotacerta.com.br" class="link-contato">
+                            contato@rotacerta.com.br
+                        </a>
+                    </div>
+                    
+                    <div class="info-contato-item">
+                        <span class="label-info">Tempo de resposta:</span>
+                        <p class="texto-info">Até 24 horas úteis</p>
+                    </div>
+                    
+                    <a href="https://workspace.google.com/intl/pt-BR/gmail/" class="botao-card-contato" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Email
+                    </a>
+                </div>
+                
+                <!-- ========================================
+                     CARD WHATSAPP - Atendimento Rápido (DESTAQUE)
+                     ========================================
+                     Card em destaque com badge "Rápido"
+                     para indicar canal prioritário.
+                     ======================================== -->
+                <div class="card-contato card-destaque">
+                    <!-- Badge de destaque -->
+                    <div class="badge-rapido">
+                        <i class="fas fa-bolt"></i> Rápido
+                    </div>
+                    <div class="icone-card-contato icone-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p class="descricao-card">Atendimento rápido e personalizado</p>
+                    
+                    <div class="info-contato-item">
+                        <span class="label-info">Número:</span>
+                        <a href="https://wa.me/5511999999999" class="link-contato" target="_blank" rel="noopener noreferrer">
+                            (11) 99999-9999
+                        </a>
+                    </div>
+                    
+                    <div class="info-contato-item">
+                        <span class="label-info">Horário:</span>
+                        <p class="texto-info">Seg a Dom, 8h às 22h</p>
+                    </div>
+                    
+                    <a href="https://wa.me/5511999999999" class="botao-card-contato botao-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        Iniciar Conversa
+                    </a>
+                </div>
+                
+                <!-- ========================================
+                     CARD LOCALIZAÇÃO - Endereço Físico
+                     ========================================
+                     Informações de localização da FIAP
+                     com link para seção de mapa.
+                     ======================================== -->
+                <div class="card-contato">
+                    <!-- Ícone de localização -->
+                    <div class="icone-card-contato" aria-hidden="true">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Localização</h3>
+                    <p class="descricao-card">Visite nossa unidade presencialmente</p>
+                    
+                    <div class="info-contato-item">
+                        <span class="label-info">FIAP - Paulista:</span>
+                        <p class="texto-info">
+                            Av. Paulista, 1106<br>
+                            Bela Vista, São Paulo - SP<br>
+                            CEP: 01310-100
+                        </p>
+                    </div>
+                    
+                    <div class="info-contato-item">
+                        <span class="label-info">Horário:</span>
+                        <p class="texto-info">Seg a Sex, 8h às 22h</p>
+                    </div>
+                    
+                    <a href="#secao-como-chegar" class="botao-card-contato">
+                        <i class="fas fa-directions"></i>
+                        Ver no Mapa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIM DA SEÇÃO CARDS DE CONTATO -->
+
     </main>
     <!-- FIM DO MAIN -->
 
