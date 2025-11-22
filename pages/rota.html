@@ -804,7 +804,53 @@
                     
                 </form>
                 <!-- FIM DO FORMULÁRIO -->
-
+                
+                <!-- ============================================
+                     TELA DE CARREGAMENTO
+                     ============================================
+                     Exibida após submissão do formulário enquanto
+                     o JavaScript processa as respostas e gera as
+                     recomendações personalizadas.
+                     Controlado via JavaScript (rota.js).
+                     ============================================ -->
+                <div class="tela-carregamento" id="telaCarregamento" style="display: none;" role="status" aria-live="polite">
+                    <div class="carregamento-conteudo">
+                        
+                        <!-- Spinner animado -->
+                        <div class="spinner" aria-label="Carregando"></div>
+                        
+                        <!-- Título da tela -->
+                        <h3 class="carregamento-titulo">Analisando Seu Perfil...</h3>
+                        
+                        <!-- Texto dinâmico atualizado via JavaScript -->
+                        <p class="carregamento-texto" id="textoCarregamento">Processando suas respostas</p>
+                        
+                        <!-- Etapas da análise com feedback visual -->
+                        <div class="carregamento-etapas" role="list">
+                            
+                            <!-- Etapa 1: Avaliando habilidades -->
+                            <div class="etapa-analise" id="etapaHabilidades" role="listitem">
+                                <i class="fas fa-circle-notch fa-spin" aria-hidden="true"></i>
+                                <span>Avaliando habilidades</span>
+                            </div>
+                            
+                            <!-- Etapa 2: Analisando mercado -->
+                            <div class="etapa-analise" id="etapaMercado" role="listitem">
+                                <i class="fas fa-circle-notch fa-spin" aria-hidden="true"></i>
+                                <span>Analisando mercado</span>
+                            </div>
+                            
+                            <!-- Etapa 3: Gerando recomendações -->
+                            <div class="etapa-analise" id="etapaRecomendacoes" role="listitem">
+                                <i class="fas fa-circle-notch fa-spin" aria-hidden="true"></i>
+                                <span>Gerando recomendações</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM DA TELA DE CARREGAMENTO -->
+                
     </main>
     <!-- FIM DO MAIN -->
     
