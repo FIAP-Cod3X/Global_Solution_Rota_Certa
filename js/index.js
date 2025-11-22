@@ -87,3 +87,154 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('🎯 Sistema de tabs inicializado!', tabBotoes.length, 'tabs encontradas');
 });
+
+
+/* ============================================================================
+   TERMÔMETRO DE RISCO - Diagnóstico Interativo
+   ============================================================================
+   
+   O que faz:
+   - Calcula risco de automação baseado na profissão selecionada
+   - Anima barra de progresso com cores dinâmicas
+   - Mostra feedback visual e textual personalizado
+   
+   Dados técnicos:
+   - Percentuais vêm do atributo data-risco de cada <option>
+   - Barra usa width + transition CSS para animação suave
+   - Classes CSS (.risco-baixo, .risco-medio, .risco-alto) definem cores
+   
+   UX Design aplicado:
+   - Feedback imediato ao selecionar (< 100ms perceived)
+   - Cores semafóricas (verde=seguro, amarelo=atenção, vermelho=urgente)
+   - Texto descritivo com emoji para reforço visual
+   - Animação de entrada (setTimeout) cria micro-interação satisfatória
+   ============================================================================ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ========== SELECIONA ELEMENTOS DO DOM ==========
+    // getElementById() = mais rápido que querySelector para IDs
+    const seletorProfissao = document.getElementById('seletorProfissao');
+    const resultadoDiagnostico = document.getElementById('resultadoDiagnostico');
+    const mensagemInicial = document.getElementById('mensagemInicial');
+    const preenchimentoBarra = document.getElementById('preenchimentoBarra');
+    const numeroPercentual = document.getElementById('numeroPercentual');
+    const descricaoRisco = document.getElementById('descricaoRisco');
+    
+    // ========== VALIDAÇÃO: Guard Clause Pattern ==========
+    // Verifica se elementos essenciais existem antes de continuar
+    // ! = operador NOT (inverte boolean)
+    // || = operador OR (se um OU outro for falsy)
+    if (!seletorProfissao || !resultadoDiagnostico) {
+        console.warn('⚠️ Elementos do diagnóstico não encontrados!');
+        return; // Sai da função para evitar erros
+    }
+    
+    // ========== FUNÇÃO: Atualizar Barra de Risco ==========
+    /**
+     * Atualiza visual da barra de risco com animação e cores dinâmicas
+     * @param {number} porcentagem - Valor de 0 a 100 representando risco
+     */
+    function atualizarBarraRisco(porcentagem) {
+        
+        // ========== PASSO 1: Esconde Mensagem Inicial ==========
+        // Condicional if: só executa se mensagemInicial existir
+        if (mensagemInicial) {
+            mensagemInicial.style.display = 'none';
+        }
+        
+        // ========== PASSO 2: Mostra Resultado ==========
+        // Remove display:none aplicado no CSS
+        resultadoDiagnostico.style.display = 'block';
+        
+        // ========== PASSO 3: Atualiza Número do Percentual ==========
+        // textContent = troca texto interno do elemento
+        // Mais seguro que innerHTML (previne XSS)
+        numeroPercentual.textContent = porcentagem;
+        
+        // ========== PASSO 4: Anima Barra de Progresso ==========
+        // setTimeout() = executa código depois de X milissegundos
+        // Delay de 100ms permite que display:block seja aplicado primeiro
+        // Sem delay, transição CSS não funciona (elemento ainda hidden)
+        setTimeout(function() {
+            // Concatenação de string: porcentagem + '%' = "85%"
+            preenchimentoBarra.style.width = porcentagem + '%';
+        }, 100);
+        
+        // ========== PASSO 5: Remove Classes Antigas ==========
+        // Limpa estado anterior antes de aplicar novo
+        // Previne múltiplas classes de risco ao mesmo tempo
+        preenchimentoBarra.classList.remove('risco-baixo', 'risco-medio', 'risco-alto', 'risco-critico');
+        
+        // ========== PASSO 6: Aplica Estilo Baseado em Faixas de Risco ==========
+        // Estrutura: if / else if / else = mutual exclusion
+        // Apenas um bloco será executado
+        
+        // FAIXA 1: Risco Baixo (0-40%)
+        if (porcentagem <= 40) {
+            preenchimentoBarra.classList.add('risco-baixo');
+            descricaoRisco.textContent = '✅ Sua profissão tem baixo risco de automação. Continue desenvolvendo suas habilidades!';
+            descricaoRisco.style.color = 'var(--cor-verde-folha)';
+            descricaoRisco.style.backgroundColor = 'rgba(243, 255, 238, 0.7)';
+            descricaoRisco.style.borderLeft = '4px solid #27ae60';
+        } 
+        // FAIXA 2: Risco Médio (41-70%)
+        else if (porcentagem <= 70) {
+            preenchimentoBarra.classList.add('risco-medio');
+            descricaoRisco.textContent = '⚠️ Risco médio. É hora de considerar desenvolver novas competências digitais.';
+            descricaoRisco.style.color = '#f39c12';
+            descricaoRisco.style.backgroundColor = 'rgba(255, 254, 238, 0.7)';
+            descricaoRisco.style.borderLeft = '4px solid #f39c12';
+        } 
+        // FAIXA 3: Risco Alto (71-100%)
+        else {
+            preenchimentoBarra.classList.add('risco-alto');
+            descricaoRisco.textContent = '🚨 Alto risco de automação! Recomendamos iniciar sua transição de carreira agora.';
+            descricaoRisco.style.color = '#e74c3c';
+            descricaoRisco.style.backgroundColor = 'rgba(255, 238, 238, 0.7)';
+            descricaoRisco.style.borderLeft = '4px solid #e74c3c';
+        }
+    }
+    
+    // ========== EVENT LISTENER: Mudança no Select ==========
+    /**
+     * Dispara quando usuário seleciona uma profissão no dropdown
+     * Evento 'change' = ativa ao mudar valor do <select>
+     */
+    seletorProfissao.addEventListener('change', function() {
+        
+        // ========== CAPTURA DADOS DA OPÇÃO SELECIONADA ==========
+        // this = referência ao seletorProfissao
+        // this.options = array com todas as <option> do <select>
+        // this.selectedIndex = índice (posição) da opção selecionada
+        const opcaoSelecionada = this.options[this.selectedIndex];
+        
+        // ========== VALIDAÇÃO: Opção Padrão ("Selecione...") ==========
+        // value === '' = usuário não selecionou profissão válida
+        if (this.value === '') {
+            // Esconde resultado e volta estado inicial
+            resultadoDiagnostico.style.display = 'none';
+            if (mensagemInicial) {
+                mensagemInicial.style.display = 'block';
+            }
+            return; // Early return: sai da função
+        }
+        
+        // ========== EXTRAI PERCENTUAL DE RISCO ==========
+        // getAttribute() = pega valor de atributo HTML customizado
+        // data-risco="85" está definido em cada <option> no HTML
+        // parseInt() = converte string "85" para número 85
+        const riscoAutomacao = parseInt(opcaoSelecionada.getAttribute('data-risco'));
+        
+        // ========== ATUALIZA INTERFACE ==========
+        // Chama função que anima barra e aplica estilos
+        atualizarBarraRisco(riscoAutomacao);
+        
+        // ========== LOG PARA DEBUG (Console do navegador) ==========
+        // Útil para desenvolvimento e troubleshooting
+        // .textContent = texto visível da opção
+        console.log('📊 Profissão selecionada:', opcaoSelecionada.textContent, '| Risco:', riscoAutomacao + '%');
+    });
+    
+    console.log('📊 Termômetro de risco inicializado com sucesso!');
+});
