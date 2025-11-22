@@ -158,7 +158,65 @@
          único desta página. Deve haver apenas um <main> por página.
          ============================================ -->
     <main id="conteudo-principal" role="main">
-
+        
+        <!-- ============================================
+             SEÇÃO HERO - Banner Principal "Sobre"
+             ============================================
+             Apresenta a história e missão do projeto Rota Certa.
+             Inclui badge de contexto, título impactante e
+             estatísticas relevantes sobre o desemprego no Brasil.
+             ============================================ -->
+        <section class="hero-sobre" aria-labelledby="titulo-hero-sobre">
+        <div class="container">
+            <div class="hero-sobre-conteudo">
+                
+                <!-- BADGE: Contexto da seção -->
+                <!-- role="img": Indica elemento decorativo com significado -->
+                <span class="badge-hero-sobre" role="img" aria-label="Nossa história">
+                    <i class="fas fa-lightbulb" aria-hidden="true"></i> Nossa História
+                </span>
+                
+                <!-- TÍTULO PRINCIPAL H1: Deve ser único na página -->
+                <!-- Destaca a proposta de transformação do projeto -->
+                <h1 class="titulo-hero-sobre" id="titulo-hero-sobre">
+                    Transformando Desemprego em <span class="destaque-laranja">Oportunidade</span>
+                </h1>
+                
+                <!-- SUBTÍTULO: Complementa a proposta de valor -->
+                <!-- Utiliza <strong> para enfatizar a pergunta chave -->
+                <p class="subtitulo-hero-sobre">
+                    O Rota Certa nasceu de uma pergunta simples: <strong>"E se o desemprego pudesse ser 
+                    o começo de algo melhor?"</strong> Desenvolvemos um GPS da requalificação profissional 
+                    que guia trabalhadores em transição de carreira.
+                </p>
+                
+                <!-- ESTATÍSTICAS: Dados que validam a urgência do problema -->
+                <div class="hero-sobre-stats" aria-label="Estatísticas de impacto">
+                    
+                    <!-- STAT 1: Magnitude do problema -->
+                    <div class="stat-hero-sobre">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                        <div>
+                            <strong>12 milhões+</strong>
+                            <span>Desempregados no Brasil</span>
+                        </div>
+                    </div>
+                    
+                    <!-- STAT 2: Nossa proposta única -->
+                    <div class="stat-hero-sobre">
+                        <i class="fas fa-route" aria-hidden="true"></i>
+                        <div>
+                            <strong>1 Solução</strong>
+                            <span>GPS da Requalificação</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIM DA SEÇÃO HERO -->
+    
     </main>
     <!-- FIM DO MAIN -->
 
