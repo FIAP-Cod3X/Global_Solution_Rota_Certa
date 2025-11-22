@@ -146,6 +146,48 @@
          ============================================ -->
     <main id="conteudo-principal" role="main">
 
+        <!-- ============================================
+             SEÇÃO HERO FAQ - Banner Principal
+             ============================================
+             Primeira seção com título, descrição e barra
+             de pesquisa para filtrar perguntas frequentes.
+             Utiliza badges e ícones para visual atrativo.
+             ============================================ -->
+        <section class="hero-faq" id="hero" aria-labelledby="titulo-hero-faq">
+        <div class="container">
+            <div class="hero-faq-conteudo">
+                
+                <!-- BADGE: Identificador da seção -->
+                <span class="badge-hero-faq" role="img" aria-label="Central de Ajuda">
+                    <i class="fas fa-question-circle" aria-hidden="true"></i> Central de Ajuda
+                </span>
+                
+                <!-- TÍTULO PRINCIPAL H1: Deve ser único na página -->
+                <h1 class="titulo-hero-faq" id="titulo-hero-faq">
+                    Perguntas <span class="destaque-laranja">Frequentes</span>
+                </h1>
+                
+                <!-- SUBTÍTULO: Descrição da página -->
+                <p class="subtitulo-hero-faq">
+                    Tire suas dúvidas sobre o Rota Certa e descubra como podemos ajudar você a encontrar seu novo caminho profissional.
+                </p>
+                
+                <!-- BARRA DE PESQUISA: Filtro de perguntas em tempo real -->
+                <!-- Controlada via JavaScript (faq.js) -->
+                <div class="barra-pesquisa-faq" role="search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input 
+                        type="text" 
+                        id="inputPesquisaFaq" 
+                        placeholder="Pesquisar perguntas..." 
+                        aria-label="Pesquisar perguntas frequentes"
+                        autocomplete="off">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIM DA SEÇÃO HERO FAQ -->
+
     </main>
     <!-- FIM DO MAIN -->
 
