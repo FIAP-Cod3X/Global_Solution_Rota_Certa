@@ -28,7 +28,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(74, 145, 226, 0.650) 0%, rgba(102, 126, 234, 0.650) 100%);
+    background: linear-gradient(135deg, #5dade29f 0%, #297fb99f 100%);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     z-index: 1;
@@ -159,7 +159,7 @@
 }
 
 .stat-texto-hero {
-    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-size: clamp(0.85rem, 1.5vw, var(--texto-normal));
     opacity: 0.95;
     font-weight: 500;
     text-align: center;
@@ -892,7 +892,7 @@
 }
 
 .simbolo-percentual {
-    font-size: 2.5rem;
+    font-size: var(--titulo-grande);
     font-weight: 700;
     color: var(--cor-azul-petroleo);
 }
@@ -1101,6 +1101,10 @@
         padding: var(--espacamento-medio);
         gap: var(--espacamento-medio);
     }
+
+    .popup-email {
+        font-size: 0.750rem;
+    }
 }
 
 /* ========== SEÇÃO IMPACTO (ODS) ========== */
@@ -1205,5 +1209,13 @@
     
     .estatisticas {
         flex-direction: column;
+    }
+
+    .descricao-risco {
+        font-size: var(--texto-pequeno);
+    }
+
+    .resultado-diagnostico .botao-principal {
+        font-size: var(--texto-pequeno);
     }
 }
