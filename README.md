@@ -88,9 +88,14 @@ Dashboard com métricas de progresso e suporte contínuo
 ## 🛠️ Tecnologias
 
 ### Frontend
+
+<div align="center">
+  
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+</div>
 
 - **HTML5**: Estrutura semântica e acessível
 - **CSS3**: Design responsivo com Flexbox e Grid Layout
@@ -103,9 +108,13 @@ Dashboard com métricas de progresso e suporte contínuo
   - Validação de formulários
 
 ### Design e UX
+<div align="center">
+  
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Font Awesome](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white)
 ![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?style=for-the-badge&logo=google&logoColor=white)
+
+</div>
 
 - **Poppins**: Tipografia para títulos e destaques
 - **Open Sans**: Tipografia para textos e parágrafos
@@ -153,7 +162,7 @@ Dashboard com métricas de progresso e suporte contínuo
       <sub>💡 Python • JavaScript • React • Node.js • SQL</sub>
     </td>
     <td align="center">
-      <img src="./assets/pablo.jpg" width="150px;" alt="Pablo Garcia"/><br>
+      <img src="./assets/pablo.jpg" width="150px;" height="150px;" alt="Pablo Garcia"/><br>
       <sub><b>Pablo Garcia</b></sub><br>
       <sub>UX/UI Designer & Frontend</sub><br><br>
       <sub>📋 <b>RM:</b> 568074</sub><br>
@@ -256,7 +265,7 @@ Global_Solution_Rota_Certa/
 #### Processo de Requalificação
 <img src="./assets/pessoas2.jpg" alt="Processo" width="700">
 
-*Visualização da jornada de requalificação profissional*
+*Visualização da jornada de requalificação profissional que buscamos*
 
 </div>
 
@@ -288,7 +297,7 @@ Para executar este projeto, você precisa apenas de:
 
 1. **Clone o repositório**
 ```bash
-git clone https://github.com/seu-usuario/rota-certa.git
+https://github.com/FIAP-Cod3X/Global_Solution_Rota_Certa.git
 ```
 
 2. **Navegue até o diretório do projeto**
@@ -306,13 +315,10 @@ cd rota-certa
 # Clique com botão direito em index.html > "Open with Live Server"
 ```
 
-**Opção 3**: Use um servidor HTTP simples com Python
-```bash
-# Python 3
-python -m http.server 8000
+**Opção 3**: Acesse nosso site hospedado pelo GitHub:
 
-# Acesse: http://localhost:8000
-```
+<a href="https://fiap-cod3x.github.io/Global_Solution_Rota_Certa/">Rota Certa</a>
+
 
 ### Navegação
 
@@ -347,9 +353,9 @@ O site possui as seguintes páginas completas:
 
 ### 🌐 Repositório do Projeto
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pabloedinha/Global_Solution_Rota_Certa)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FIAP-Cod3X/Global_Solution_Rota_Certa)
 
-**URL Completa**: `https://github.com/pabloedinha/Global_Solution_Rota_Certa`
+**URL Completa**: `https://github.com/FIAP-Cod3X/Global_Solution_Rota_Certa`
 
 ### 📚 Recursos Adicionais
 
@@ -363,7 +369,7 @@ O site possui as seguintes páginas completas:
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido como parte do **Global Solution 2024** da **FIAP** para fins acadêmicos.
+Este projeto foi desenvolvido como parte do **Global Solution 2025** da **FIAP** para fins acadêmicos.
 
 ---
 
