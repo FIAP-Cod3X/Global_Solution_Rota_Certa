@@ -225,6 +225,586 @@
         </section>
         <!-- FIM DA SEÇÃO HERO -->
         
+        <!-- ============================================
+             SEÇÃO QUESTIONÁRIO - Formulário Multi-Etapas
+             ============================================
+             Seção principal da página contendo o questionário
+             interativo de 5 etapas com validação em tempo real.
+             Controlado via JavaScript (rota.js).
+             ============================================ -->
+        <section class="secao-questionario" id="questionario" aria-labelledby="titulo-progresso">
+            <div class="container">
+                
+                <!-- ============================================
+                     INDICADOR DE PROGRESSO
+                     ============================================
+                     Barra visual que mostra ao usuário em qual etapa
+                     está e quanto falta para concluir o questionário.
+                     Atualizado dinamicamente via JavaScript.
+                     ============================================ -->
+                <div class="progresso-container" role="region" aria-label="Progresso do questionário">
+                    
+                    <!-- Barra de progresso horizontal -->
+                    <div class="progresso-barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20">
+                        <div class="progresso-preenchimento" id="progressoPreenchimento"></div>
+                    </div>
+                    
+                    <!-- Indicadores de cada etapa -->
+                    <div class="progresso-etapas" role="list">
+                        
+                        <!-- Etapa 1: Perfil Básico -->
+                        <div class="etapa-indicador ativa" data-etapa="1" role="listitem">
+                            <span class="etapa-numero" aria-label="Etapa 1">1</span>
+                            <span class="etapa-nome">Perfil</span>
+                        </div>
+                        
+                        <!-- Etapa 2: Habilidades -->
+                        <div class="etapa-indicador" data-etapa="2" role="listitem">
+                            <span class="etapa-numero" aria-label="Etapa 2">2</span>
+                            <span class="etapa-nome">Habilidades</span>
+                        </div>
+                        
+                        <!-- Etapa 3: Experiência Profissional -->
+                        <div class="etapa-indicador" data-etapa="3" role="listitem">
+                            <span class="etapa-numero" aria-label="Etapa 3">3</span>
+                            <span class="etapa-nome">Experiência</span>
+                        </div>
+                        
+                        <!-- Etapa 4: Interesses -->
+                        <div class="etapa-indicador" data-etapa="4" role="listitem">
+                            <span class="etapa-numero" aria-label="Etapa 4">4</span>
+                            <span class="etapa-nome">Interesses</span>
+                        </div>
+                        
+                        <!-- Etapa 5: Objetivos -->
+                        <div class="etapa-indicador" data-etapa="5" role="listitem">
+                            <span class="etapa-numero" aria-label="Etapa 5">5</span>
+                            <span class="etapa-nome">Objetivos</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- ============================================
+                     FORMULÁRIO MULTI-ETAPAS
+                     ============================================
+                     Questionário dividido em 5 etapas para não
+                     sobrecarregar o usuário. Navegação controlada
+                     por botões e validação em tempo real.
+                     ============================================ -->
+                <form class="formulario-rota" id="formularioRota" novalidate>
+                    
+                    <!-- ========================================
+                         ETAPA 1: PERFIL BÁSICO
+                         ========================================
+                         Coleta informações básicas do usuário:
+                         Nome, idade, e-mail, telefone, escolaridade
+                         e profissão atual.
+                         ======================================== -->
+                    <div class="etapa-form ativa" id="etapa-1" role="region" aria-labelledby="titulo-etapa-1">
+                        
+                        <!-- Cabeçalho da Etapa -->
+                        <div class="etapa-cabecalho">
+                            <div class="icone-etapa" role="img" aria-label="Perfil do usuário">
+                                <i class="fas fa-user-circle" aria-hidden="true"></i>
+                            </div>
+                            <h2 class="titulo-etapa" id="titulo-etapa-1">Vamos Começar pelo Básico</h2>
+                            <p class="subtitulo-etapa">Nos conte um pouco sobre você</p>
+                        </div>
+                        
+                        <!-- Grid de Campos: Layout responsivo (2 colunas desktop, 1 mobile) -->
+                        <div class="campos-grid">
+                            
+                            <!-- Campo: Nome Completo (obrigatório) -->
+                            <div class="campo-grupo">
+                                <label for="nome">Nome Completo <span class="obrigatorio">*</span></label>
+                                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo" aria-required="true">
+                                <span class="mensagem-erro" role="alert"></span>
+                            </div>
+                            
+                            <!-- Campo: Idade (obrigatório, entre 16 e 100 anos) -->
+                            <div class="campo-grupo">
+                                <label for="idade">Idade <span class="obrigatorio">*</span></label>
+                                <input type="number" id="idade" name="idade" required min="16" max="100" placeholder="Ex: 28" aria-required="true">
+                                <span class="mensagem-erro" role="alert"></span>
+                            </div>
+                            
+                            <!-- Campo: E-mail (obrigatório) -->
+                            <div class="campo-grupo">
+                                <label for="email">E-mail <span class="obrigatorio">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="seu@email.com" aria-required="true">
+                                <span class="mensagem-erro" role="alert"></span>
+                            </div>
+                            
+                            <!-- Campo: Telefone (opcional) -->
+                            <div class="campo-grupo">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="Ex: (12) 12345-6789">
+                                <span class="mensagem-erro" role="alert"></span>
+                            </div>
+                            
+                            <!-- Campo: Escolaridade (obrigatório, largura completa) -->
+                            <div class="campo-grupo campo-completo">
+                                <label for="escolaridade">Nível de Escolaridade <span class="obrigatorio">*</span></label>
+                                <select id="escolaridade" name="escolaridade" required aria-required="true">
+                                    <option value="">Selecione...</option>
+                                    <option value="fundamental-incompleto">Fundamental Incompleto</option>
+                                    <option value="fundamental-completo">Fundamental Completo</option>
+                                    <option value="medio-incompleto">Médio Incompleto</option>
+                                    <option value="medio-completo">Médio Completo</option>
+                                    <option value="superior-incompleto">Superior Incompleto</option>
+                                    <option value="superior-completo">Superior Completo</option>
+                                    <option value="pos-graduacao">Pós-Graduação</option>
+                                </select>
+                                <span class="mensagem-erro" role="alert"></span>
+                            </div>
+                            
+                            <!-- Campo: Profissão Atual (obrigatório, largura completa) -->
+                            <div class="campo-grupo campo-completo">
+                                <label for="profissaoAtual">Profissão/Cargo Atual <span class="obrigatorio">*</span></label>
+                                <input type="text" id="profissaoAtual" name="profissaoAtual" required placeholder="Ex: Caixa de Supermercado, Recepcionista, Vendedor..." aria-required="true">
+                                <span class="mensagem-erro" role="alert"></span>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Ações da Etapa: Botão para avançar -->
+                        <div class="etapa-acoes">
+                            <button type="button" class="botao-proximo" data-proxima="2" aria-label="Avançar para Etapa 2">
+                                Próxima Etapa
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <!-- FIM DA ETAPA 1 -->
+                    
+                    <!-- ========================================
+                         ETAPA 2: HABILIDADES COMPORTAMENTAIS
+                         ========================================
+                         Identifica as soft skills do usuário através
+                         de cards interativos com checkboxes.
+                         Mínimo de 3 habilidades obrigatórias.
+                         ======================================== -->
+                    <div class="etapa-form" id="etapa-2" role="region" aria-labelledby="titulo-etapa-2">
+                        
+                        <!-- Cabeçalho da Etapa -->
+                        <div class="etapa-cabecalho">
+                            <div class="icone-etapa" role="img" aria-label="Estrela de habilidades">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+                            <h2 class="titulo-etapa" id="titulo-etapa-2">Suas Habilidades Comportamentais</h2>
+                            <p class="subtitulo-etapa">Selecione as soft skills que mais se identificam com você (escolha pelo menos 3)</p>
+                        </div>
+                        
+                        <!-- Grid de Habilidades: Cards selecionáveis -->
+                        <div class="habilidades-grid" role="group" aria-label="Selecione suas habilidades">
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="comunicacao">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-comments"></i>
+                                    <h3>Comunicação</h3>
+                                    <p>Expressar ideias com clareza</p>
+                                </div>
+                            </label>
+                            
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="empatia">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-heart"></i>
+                                    <h3>Empatia</h3>
+                                    <p>Compreender os outros</p>
+                                </div>
+                            </label>
+                            
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="organizacao">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-tasks"></i>
+                                    <h3>Organização</h3>
+                                    <p>Planejar e estruturar tarefas</p>
+                                </div>
+                            </label>
+                            
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="criatividade">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <h3>Criatividade</h3>
+                                    <p>Pensar fora da caixa</p>
+                                </div>
+                            </label>
+                            
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="lideranca">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-users-cog"></i>
+                                    <h3>Liderança</h3>
+                                    <p>Guiar e motivar equipes</p>
+                                </div>
+                            </label>
+                            
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="analitico">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-chart-line"></i>
+                                    <h3>Pensamento Analítico</h3>
+                                    <p>Resolver problemas complexos</p>
+                                </div>
+                            </label>
+                            
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="adaptabilidade">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <h3>Adaptabilidade</h3>
+                                    <p>Lidar bem com mudanças</p>
+                                </div>
+                            </label>
+                            
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="paciencia">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-hourglass-half"></i>
+                                    <h3>Paciência</h3>
+                                    <p>Persistir com calma</p>
+                                </div>
+                            </label>
+                            
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="trabalho-equipe">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-handshake"></i>
+                                    <h3>Trabalho em Equipe</h3>
+                                    <p>Colaborar efetivamente</p>
+                                </div>
+                            </label>
+                            
+                            <label class="habilidade-card">
+                                <input type="checkbox" name="habilidades" value="atencao-detalhes">
+                                <div class="habilidade-conteudo">
+                                    <i class="fas fa-search"></i>
+                                    <h3>Atenção aos Detalhes</h3>
+                                    <p>Cuidado com precisão</p>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <!-- Mensagem de erro caso menos de 3 habilidades sejam selecionadas -->
+                        <span class="mensagem-erro texto-centro" id="erroHabilidades" role="alert"></span>
+                        
+                        <!-- Ações da Etapa: Botões Voltar e Próximo -->
+                        <div class="etapa-acoes">
+                            <button type="button" class="botao-voltar" data-anterior="1" aria-label="Voltar para Etapa 1">
+                                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                                Voltar
+                            </button>
+                            <button type="button" class="botao-proximo" data-proxima="3" aria-label="Avançar para Etapa 3">
+                                Próxima Etapa
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <!-- FIM DA ETAPA 2 -->
+                    
+                    <!-- ========================================
+                         ETAPA 3: EXPERIÊNCIA PROFISSIONAL
+                         ========================================
+                         Coleta informações sobre tempo de experiência,
+                         áreas de atuação, conquistas e motivação para
+                         mudança de carreira.
+                         ======================================== -->
+                    <div class="etapa-form" id="etapa-3" role="region" aria-labelledby="titulo-etapa-3">
+                        
+                        <!-- Cabeçalho da Etapa -->
+                        <div class="etapa-cabecalho">
+                            <div class="icone-etapa" role="img" aria-label="Maleta de trabalho">
+                                <i class="fas fa-briefcase" aria-hidden="true"></i>
+                            </div>
+                            <h2 class="titulo-etapa" id="titulo-etapa-3">Experiência Profissional</h2>
+                            <p class="subtitulo-etapa">Conte-nos sobre sua trajetória</p>
+                        </div>
+                        
+                        <!-- Grid de Campos -->
+                        <div class="campos-grid">
+                            <div class="campo-grupo campo-completo">
+                                <label for="tempoExperiencia">Há quanto tempo trabalha na área atual? <span class="obrigatorio">*</span></label>
+                                <select id="tempoExperiencia" name="tempoExperiencia" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="menos-1">Menos de 1 ano</option>
+                                    <option value="1-3">1 a 3 anos</option>
+                                    <option value="3-5">3 a 5 anos</option>
+                                    <option value="5-10">5 a 10 anos</option>
+                                    <option value="mais-10">Mais de 10 anos</option>
+                                </select>
+                                <span class="mensagem-erro"></span>
+                            </div>
+                            
+                            <div class="campo-grupo campo-completo">
+                                <label>Experiência com tecnologia: <span class="obrigatorio">*</span></label>
+                                <div class="opcoes-radio">
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="experienciaTech" value="iniciante" required>
+                                        <span>Iniciante - Uso básico de computador/celular</span>
+                                    </label>
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="experienciaTech" value="intermediario">
+                                        <span>Intermediário - Uso diário de apps e softwares</span>
+                                    </label>
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="experienciaTech" value="avancado">
+                                        <span>Avançado - Conhecimento técnico (programação, sistemas, etc.)</span>
+                                    </label>
+                                </div>
+                                <span class="mensagem-erro"></span>
+                            </div>
+                            
+                            <div class="campo-grupo campo-completo">
+                                <label for="setores">Setores em que já trabalhou (opcional):</label>
+                                <input type="text" id="setores" name="setores" placeholder="Ex: Varejo, Atendimento, Logística...">
+                                <small class="campo-ajuda">Separe por vírgula se houver mais de um</small>
+                            </div>
+                            
+                            <div class="campo-grupo campo-completo">
+                                <label for="conquistasDesafios">Suas maiores conquistas ou desafios superados:</label>
+                                <textarea id="conquistasDesafios" name="conquistasDesafios" rows="4" placeholder="Ex: Bati meta de vendas, liderei equipe, aprendi nova ferramenta..."></textarea>
+                                <small class="campo-ajuda">Isso nos ajuda a entender melhor seu perfil</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Ações da Etapa: Botões Voltar e Próximo -->
+                        <div class="etapa-acoes">
+                            <button type="button" class="botao-voltar" data-anterior="2" aria-label="Voltar para Etapa 2">
+                                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                                Voltar
+                            </button>
+                            <button type="button" class="botao-proximo" data-proxima="4" aria-label="Avançar para Etapa 4">
+                                Próxima Etapa
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <!-- FIM DA ETAPA 3 -->
+                    
+                    <!-- ========================================
+                         ETAPA 4: INTERESSES E MOTIVAÇÕES
+                         ========================================
+                         Identifica áreas de interesse, modalidade
+                         de estudo preferida e temas que o usuário
+                         gostaria de aprender.
+                         ======================================== -->
+                    <div class="etapa-form" id="etapa-4" role="region" aria-labelledby="titulo-etapa-4">
+                        
+                        <!-- Cabeçalho da Etapa -->
+                        <div class="etapa-cabecalho">
+                            <div class="icone-etapa" role="img" aria-label="Coração de interesses">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </div>
+                            <h2 class="titulo-etapa" id="titulo-etapa-4">O que Te Motiva?</h2>
+                            <p class="subtitulo-etapa">Vamos entender seus interesses e preferências</p>
+                        </div>
+                        
+                        <!-- Grid de Campos -->
+                        <div class="campos-grid">
+                            <div class="campo-grupo campo-completo">
+                                <label>Que tipo de trabalho você prefere? <span class="obrigatorio">*</span></label>
+                                <div class="opcoes-radio">
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="tipoTrabalho" value="presencial" required>
+                                        <span><i class="fas fa-building"></i> Presencial - Gosto de estar no ambiente físico</span>
+                                    </label>
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="tipoTrabalho" value="remoto">
+                                        <span><i class="fas fa-home"></i> Remoto - Prefiro trabalhar de casa</span>
+                                    </label>
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="tipoTrabalho" value="hibrido">
+                                        <span><i class="fas fa-sync-alt"></i> Híbrido - Combinação dos dois</span>
+                                    </label>
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="tipoTrabalho" value="tanto-faz">
+                                        <span><i class="fas fa-balance-scale"></i> Tanto faz - Flexível</span>
+                                    </label>
+                                </div>
+                                <span class="mensagem-erro"></span>
+                            </div>
+                            
+                            <div class="campo-grupo campo-completo">
+                                <label>Qual ritmo de trabalho combina mais com você? <span class="obrigatorio">*</span></label>
+                                <div class="opcoes-radio">
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="ritmoTrabalho" value="rotina" required>
+                                        <span>Rotina previsível - Tarefas regulares e organizadas</span>
+                                    </label>
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="ritmoTrabalho" value="dinamico">
+                                        <span>Dinâmico - Mudanças e desafios constantes</span>
+                                    </label>
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="ritmoTrabalho" value="equilibrado">
+                                        <span>Equilibrado - Mix de rotina e novidades</span>
+                                    </label>
+                                </div>
+                                <span class="mensagem-erro"></span>
+                            </div>
+                            
+                            <div class="campo-grupo campo-completo">
+                                <label>Áreas que despertam seu interesse (escolha até 3):</label>
+                                <div class="interesses-tags">
+                                    <label class="tag-interesse">
+                                        <input type="checkbox" name="areasInteresse" value="tecnologia">
+                                        <span><i class="fas fa-laptop-code"></i> Tecnologia</span>
+                                    </label>
+                                    <label class="tag-interesse">
+                                        <input type="checkbox" name="areasInteresse" value="saude">
+                                        <span><i class="fas fa-heartbeat"></i> Saúde</span>
+                                    </label>
+                                    <label class="tag-interesse">
+                                        <input type="checkbox" name="areasInteresse" value="educacao">
+                                        <span><i class="fas fa-graduation-cap"></i> Educação</span>
+                                    </label>
+                                    <label class="tag-interesse">
+                                        <input type="checkbox" name="areasInteresse" value="vendas">
+                                        <span><i class="fas fa-chart-line"></i> Vendas</span>
+                                    </label>
+                                    <label class="tag-interesse">
+                                        <input type="checkbox" name="areasInteresse" value="marketing">
+                                        <span><i class="fas fa-bullhorn"></i> Marketing</span>
+                                    </label>
+                                    <label class="tag-interesse">
+                                        <input type="checkbox" name="areasInteresse" value="design">
+                                        <span><i class="fas fa-palette"></i> Design</span>
+                                    </label>
+                                    <label class="tag-interesse">
+                                        <input type="checkbox" name="areasInteresse" value="atendimento">
+                                        <span><i class="fas fa-headset"></i> Atendimento</span>
+                                    </label>
+                                    <label class="tag-interesse">
+                                        <input type="checkbox" name="areasInteresse" value="administracao">
+                                        <span><i class="fas fa-clipboard-list"></i> Administração</span>
+                                    </label>
+                                    <label class="tag-interesse">
+                                        <input type="checkbox" name="areasInteresse" value="financas">
+                                        <span><i class="fas fa-dollar-sign"></i> Finanças</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ações da Etapa: Botões Voltar e Próximo -->
+                        <div class="etapa-acoes">
+                            <button type="button" class="botao-voltar" data-anterior="3" aria-label="Voltar para Etapa 3">
+                                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                                Voltar
+                            </button>
+                            <button type="button" class="botao-proximo" data-proxima="5" aria-label="Avançar para Etapa 5">
+                                Próxima Etapa
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <!-- FIM DA ETAPA 4 -->
+                    
+                    <!-- ========================================
+                         ETAPA 5: OBJETIVOS E DISPONIBILIDADE
+                         ========================================
+                         Última etapa do questionário. Coleta
+                         objetivos de curto prazo, prazo para mudança,
+                         disponibilidade de tempo e aceitação de termos.
+                         ======================================== -->
+                    <div class="etapa-form" id="etapa-5" role="region" aria-labelledby="titulo-etapa-5">
+                        
+                        <!-- Cabeçalho da Etapa -->
+                        <div class="etapa-cabecalho">
+                            <div class="icone-etapa" role="img" aria-label="Alvo de objetivos">
+                                <i class="fas fa-bullseye" aria-hidden="true"></i>
+                            </div>
+                            <h2 class="titulo-etapa" id="titulo-etapa-5">Seus Objetivos e Disponibilidade</h2>
+                            <p class="subtitulo-etapa">Última etapa! Vamos entender suas metas</p>
+                        </div>
+                        
+                        <!-- Grid de Campos -->
+                        <div class="campos-grid">
+                            <div class="campo-grupo campo-completo">
+                                <label>Qual seu principal objetivo? <span class="obrigatorio">*</span></label>
+                                <div class="opcoes-radio">
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="objetivo" value="renda-rapida" required>
+                                        <span>Conseguir renda rápida (oportunidade imediata)</span>
+                                    </label>
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="objetivo" value="carreira-longo">
+                                        <span>Construir nova carreira (visão de longo prazo)</span>
+                                    </label>
+                                    <label class="opcao-radio">
+                                        <input type="radio" name="objetivo" value="ambos">
+                                        <span>Ambos (renda agora + carreira depois)</span>
+                                    </label>
+                                </div>
+                                <span class="mensagem-erro"></span>
+                            </div>
+                            
+                            <div class="campo-grupo campo-completo">
+                                <label for="tempoDisponivel">Quanto tempo pode dedicar ao estudo por semana? <span class="obrigatorio">*</span></label>
+                                <select id="tempoDisponivel" name="tempoDisponivel" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="1-3">1 a 3 horas</option>
+                                    <option value="3-5">3 a 5 horas</option>
+                                    <option value="5-10">5 a 10 horas</option>
+                                    <option value="10-20">10 a 20 horas</option>
+                                    <option value="mais-20">Mais de 20 horas</option>
+                                </select>
+                                <span class="mensagem-erro"></span>
+                            </div>
+                            
+                            <div class="campo-grupo campo-completo">
+                                <label for="expectativaSalario">Expectativa salarial após requalificação: <span class="obrigatorio">*</span></label>
+                                <select id="expectativaSalario" name="expectativaSalario" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="1500-2500">R$ 1.500 a R$ 2.500</option>
+                                    <option value="2500-4000">R$ 2.500 a R$ 4.000</option>
+                                    <option value="4000-6000">R$ 4.000 a R$ 6.000</option>
+                                    <option value="6000-10000">R$ 6.000 a R$ 10.000</option>
+                                    <option value="mais-10000">Mais de R$ 10.000</option>
+                                </select>
+                                <span class="mensagem-erro"></span>
+                            </div>
+                            
+                            <div class="campo-grupo campo-completo">
+                                <label for="motivacao">O que te motiva a buscar requalificação? (opcional)</label>
+                                <textarea id="motivacao" name="motivacao" rows="4" placeholder="Ex: Medo de perder emprego, busca por melhor salário, realização pessoal..."></textarea>
+                            </div>
+                            
+                            <div class="campo-grupo campo-completo">
+                                <label class="checkbox-grupo">
+                                    <input type="checkbox" id="termos" name="termos" required>
+                                    <span>Concordo em compartilhar meus dados para receber recomendações personalizadas <span class="obrigatorio">*</span></span>
+                                </label>
+                                <span class="mensagem-erro"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Ações da Etapa: Botão Voltar e Botão Finalizar (submit) -->
+                        <div class="etapa-acoes">
+                            <button type="button" class="botao-voltar" data-anterior="4" aria-label="Voltar para Etapa 4">
+                                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                                Voltar
+                            </button>
+                            <button type="submit" class="botao-finalizar" aria-label="Finalizar questionário e gerar recomendações">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                Gerar Minhas Recomendações
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <!-- FIM DA ETAPA 5 -->
+                    
+                </form>
+                <!-- FIM DO FORMULÁRIO -->
+
     </main>
     <!-- FIM DO MAIN -->
     
