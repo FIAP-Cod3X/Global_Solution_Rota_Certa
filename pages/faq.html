@@ -188,6 +188,222 @@
     </section>
     <!-- FIM DA SEÇÃO HERO FAQ -->
 
+    <!-- ============================================
+         SEÇÃO FAQ ACORDEON - Perguntas e Respostas
+         ============================================
+         Sistema de acordeon interativo com categorias
+         para filtrar perguntas. Cada pergunta pode ser
+         expandida/recolhida via JavaScript.
+         Pattern: Accordion UI
+         ============================================ -->
+    <section class="secao-faq-acordeon" id="faq" aria-labelledby="titulo-faq">
+        <div class="container">
+            
+            <!-- FILTROS DE CATEGORIA: Botões para filtrar perguntas -->
+            <div class="categorias-faq" role="tablist" aria-label="Categorias de perguntas">
+                <button class="categoria-btn ativa" data-categoria="todas" role="tab" aria-selected="true">
+                    <i class="fas fa-th-large" aria-hidden="true"></i> Todas
+                </button>
+                <button class="categoria-btn" data-categoria="geral" role="tab" aria-selected="false">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i> Geral
+                </button>
+                <button class="categoria-btn" data-categoria="plataforma" role="tab" aria-selected="false">
+                    <i class="fas fa-laptop" aria-hidden="true"></i> Plataforma
+                </button>
+                <button class="categoria-btn" data-categoria="cursos" role="tab" aria-selected="false">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i> Cursos
+                </button>
+            </div>
+
+            <!-- ACORDEON: Lista de perguntas expansíveis -->
+            <!-- Cada item pode ser expandido/recolhido via JavaScript -->
+            <div class="acordeon-faq" role="list">
+                
+                <!-- ========================================
+                     PERGUNTA 1: O que é o Rota Certa?
+                     Categoria: Geral
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="geral" role="listitem">
+                    <button class="acordeon-header" aria-expanded="false" aria-controls="resposta-1">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle" aria-hidden="true"></i>
+                            O que é o Rota Certa?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone" aria-hidden="true"></i>
+                    </button>
+                    <div class="acordeon-conteudo" id="resposta-1" role="region">
+                        <p>O Rota Certa é uma plataforma inovadora que funciona como um GPS da Requalificação Profissional. Nós ajudamos trabalhadores desempregados ou em transição de carreira a identificarem suas habilidades, descobrirem novas oportunidades e traçarem um plano personalizado de requalificação profissional através de cursos, treinamentos e orientação especializada.</p>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PERGUNTA 2: Como funciona o diagnóstico?
+                     Categoria: Geral
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="geral" role="listitem">
+                    <button class="acordeon-header">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            Como funciona o diagnóstico de carreira?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone"></i>
+                    </button>
+                    <div class="acordeon-conteudo">
+                        <p>Nosso diagnóstico funciona através de um questionário inteligente que avalia suas habilidades atuais, experiências profissionais, interesses e objetivos de carreira. Com base nessas informações, nossa IA analisa o mercado de trabalho e recomenda as melhores áreas para você se requalificar, considerando demanda do mercado, salários e compatibilidade com seu perfil.</p>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PERGUNTA 3: A plataforma é gratuita?
+                     Categoria: Plataforma
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="plataforma" role="listitem">
+                    <button class="acordeon-header">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            A plataforma é gratuita?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone"></i>
+                    </button>
+                    <div class="acordeon-conteudo">
+                        <p>Sim! O Rota Certa oferece acesso gratuito ao diagnóstico de carreira, plano de requalificação personalizado e recomendações de cursos. Nosso objetivo é democratizar o acesso à requalificação profissional. Alguns cursos parceiros podem ter custos, mas sempre indicamos opções gratuitas e acessíveis para que todos possam iniciar sua transformação profissional.</p>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PERGUNTA 4: Preciso ter experiência prévia?
+                     Categoria: Plataforma
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="plataforma" role="listitem">
+                    <button class="acordeon-header">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            Preciso ter experiência prévia para usar o Rota Certa?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone"></i>
+                    </button>
+                    <div class="acordeon-conteudo">
+                        <p>Não! O Rota Certa foi desenvolvido para atender desde pessoas que estão iniciando sua carreira até profissionais experientes que desejam fazer uma transição. Nossa plataforma se adapta ao seu nível de experiência e oferece recomendações personalizadas, seja você um iniciante ou alguém buscando mudar completamente de área.</p>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PERGUNTA 5: Quanto tempo leva?
+                     Categoria: Cursos
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="cursos" role="listitem">
+                    <button class="acordeon-header">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            Quanto tempo leva para concluir a requalificação?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone"></i>
+                    </button>
+                    <div class="acordeon-conteudo">
+                        <p>O tempo varia de acordo com a área escolhida e sua dedicação. Nossos planos de requalificação variam de 3 a 12 meses, dependendo da complexidade da nova área e do seu nível inicial. Oferecemos opções intensivas (3-6 meses) e estendidas (6-12 meses) para você escolher o ritmo que melhor se encaixa na sua rotina e objetivos.</p>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PERGUNTA 6: Vocês oferecem certificados?
+                     Categoria: Cursos
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="cursos" role="listitem">
+                    <button class="acordeon-header">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            Vocês oferecem certificados?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone"></i>
+                    </button>
+                    <div class="acordeon-conteudo">
+                        <p>Embora o Rota Certa não emita certificados próprios valiosos para o mercado (apenas os de aprendizado), conectamos você com instituições parceiras reconhecidas no mercado que oferecem certificações válidas. Ao completar cursos através de nossas recomendações, você receberá certificados oficiais das instituições parceiras, que têm reconhecimento no mercado de trabalho e agregam valor ao seu currículo.</p>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PERGUNTA 7: Como selecionam as áreas?
+                     Categoria: Geral
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="geral" role="listitem">
+                    <button class="acordeon-header">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            Como vocês selecionam as áreas de requalificação?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone"></i>
+                    </button>
+                    <div class="acordeon-conteudo">
+                        <p>Utilizamos inteligência artificial e análise de dados do mercado de trabalho em tempo real. Nossa plataforma monitora constantemente tendências de emprego, demanda por profissionais, faixas salariais e projeções de crescimento de diferentes setores. Cruzamos essas informações com seu perfil para recomendar áreas com alta empregabilidade e alinhamento com suas habilidades.</p>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PERGUNTA 8: Acesso pelo celular?
+                     Categoria: Plataforma
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="plataforma" role="listitem">
+                    <button class="acordeon-header">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            Posso acessar a plataforma pelo celular?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone"></i>
+                    </button>
+                    <div class="acordeon-conteudo">
+                        <p>Sim! O Rota Certa é totalmente responsivo e otimizado para dispositivos móveis. Você pode acessar toda a plataforma, fazer o diagnóstico, acompanhar seu plano de requalificação e acessar conteúdos através do seu smartphone ou tablet, em qualquer lugar e a qualquer momento. Oferecemos uma experiência completa e fluida em todos os dispositivos.</p>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PERGUNTA 9: Posso mudar meu plano?
+                     Categoria: Cursos
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="cursos" role="listitem">
+                    <button class="acordeon-header">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            Posso mudar meu plano de requalificação depois?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone"></i>
+                    </button>
+                    <div class="acordeon-conteudo">
+                        <p>Claro! Entendemos que objetivos e circunstâncias podem mudar. Você pode refazer o diagnóstico a qualquer momento e ajustar seu plano de requalificação. Nossa plataforma é flexível e permite que você explore diferentes caminhos profissionais conforme descobre novas áreas de interesse ou o mercado evolui. Seu progresso anterior não é perdido.</p>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PERGUNTA 10: Ajuda na busca por emprego?
+                     Categoria: Geral
+                     ======================================== -->
+                <div class="item-acordeon" data-categoria="geral" role="listitem">
+                    <button class="acordeon-header">
+                        <span class="acordeon-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            O Rota Certa ajuda na busca por emprego?
+                        </span>
+                        <i class="fas fa-chevron-down acordeon-icone"></i>
+                    </button>
+                    <div class="acordeon-conteudo">
+                        <p>Embora nosso foco principal seja a requalificação profissional, oferecemos orientações sobre como se preparar para o mercado de trabalho, incluindo dicas para currículo, perfil no LinkedIn, preparação para entrevistas e networking. Além disso, conectamos você com parceiros que oferecem oportunidades de emprego e estágio nas áreas em que você está se requalificando.</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- ========================================
+                 MENSAGEM SEM RESULTADOS
+                 Exibida quando a pesquisa não encontra perguntas
+                 ======================================== -->
+            <div class="sem-resultados" style="display: none;" role="status" aria-live="polite">
+                <i class="fas fa-search"></i>
+                <h3>Nenhuma pergunta encontrada</h3>
+                <p>Não encontramos perguntas relacionadas à sua busca. Tente outros termos ou envie sua dúvida através do formulário abaixo.</p>
+            </div>
+        </div>
+    </section>
+    <!-- FIM DA SEÇÃO FAQ ACORDEON -->
+
     </main>
     <!-- FIM DO MAIN -->
 
