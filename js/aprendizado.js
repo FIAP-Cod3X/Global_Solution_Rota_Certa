@@ -180,3 +180,160 @@ function aplicarFiltros() {
         }
     });
 }
+
+// ========================================
+// INTERAÇÃO COM MÓDULOS
+// ========================================
+
+function inicializarModulos() {
+    const botoesIniciar = document.querySelectorAll('.botao-iniciar');
+    
+    botoesIniciar.forEach(botao => {
+        botao.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modulo = botao.closest('.card-modulo');
+            const numeroModulo = modulo.dataset.modulo;
+            const tituloModulo = modulo.querySelector('.card-modulo-titulo').textContent;
+            
+            iniciarModulo(numeroModulo, tituloModulo);
+        });
+    });
+}
+
+function iniciarModulo(numero, titulo) {
+    // Mostra modal de confirmação ou redireciona para o módulo
+    if (confirm(`Deseja iniciar o módulo "${titulo}"?`)) {
+        // Em produção, redirecionaria para a página do módulo
+        console.log(`Iniciando módulo ${numero}: ${titulo}`);
+        
+        // Atualiza estado do módulo
+        const modulo = document.querySelector(`[data-modulo="${numero}"]`);
+        if (modulo) {
+            modulo.classList.remove('disponivel');
+            modulo.classList.add('em-andamento');
+            
+            const botao = modulo.querySelector('.botao-modulo');
+            botao.textContent = 'Continuar Módulo';
+            botao.classList.remove('botao-iniciar');
+            botao.classList.add('botao-continuar');
+            botao.innerHTML = '<i class="fas fa-play-circle"></i> Continuar Módulo';
+            
+            // Adiciona listener para completar o módulo
+            botao.addEventListener('click', (e) => {
+                e.preventDefault();
+                continuarModulo(numero, titulo);
+            });
+        }
+        
+        // Desbloqueia próximo módulo (simulação)
+        desbloquearProximoModulo(parseInt(numero));
+    }
+}
+
+function continuarModulo(numero, titulo) {
+    const modulo = document.querySelector(`[data-modulo="${numero}"]`);
+    if (!modulo) return;
+    
+    // Marca módulo como concluído
+    modulo.classList.remove('em-andamento');
+    modulo.classList.add('concluido');
+    
+    // Atualiza botão para verde e desabilitado
+    const botao = modulo.querySelector('.botao-modulo');
+    botao.innerHTML = '<i class="fas fa-check-circle"></i> Concluído';
+    botao.style.background = 'linear-gradient(135deg, #52c9b3, #45b597)';
+    botao.style.cursor = 'not-allowed';
+    botao.disabled = true;
+    
+    console.log(`Módulo ${numero} concluído!`);
+    
+    // Atualiza progresso da fase
+    atualizarProgressoFase();
+    
+    // Verifica conquistas
+    verificarConquistas();
+    
+    // Atualiza o botão "Continuar Aprendendo"
+    atualizarTextoBotaoContinuar();
+}
+
+function desbloquearProximoModulo(numeroAtual) {
+    const proximoNumero = numeroAtual + 1;
+    const proximoModulo = document.querySelector(`[data-modulo="${proximoNumero}"]`);
+    
+    if (proximoModulo && proximoModulo.classList.contains('bloqueado')) {
+        setTimeout(() => {
+            proximoModulo.classList.remove('bloqueado');
+            proximoModulo.classList.add('disponivel');
+            
+            // Anima desbloqueio
+            proximoModulo.style.animation = 'pulsoSuave 0.6s ease';
+            
+            // Atualiza footer
+            const footer = proximoModulo.querySelector('.card-modulo-footer');
+            footer.innerHTML = `
+                <button class="botao-modulo botao-iniciar">
+                    <i class="fas fa-play"></i> Iniciar Módulo
+                </button>
+            `;
+            
+            // Reaplica event listener
+            const botao = footer.querySelector('.botao-iniciar');
+            botao.addEventListener('click', (e) => {
+                e.preventDefault();
+                const titulo = proximoModulo.querySelector('.card-modulo-titulo').textContent;
+                iniciarModulo(proximoNumero, titulo);
+            });
+            
+            // ===== ANIMAÇÃO DE MUDANÇA DE ÍCONE =====
+            const icone = proximoModulo.querySelector('.card-modulo-icone');
+            
+            // Remove classe de bloqueado
+            icone.classList.remove('bloqueado-icone');
+            
+            // Adiciona classe de animação de desbloqueio
+            icone.classList.add('desbloqueando');
+            
+            // Muda o ícone de cadeado para o ícone específico do módulo
+            const iconElemento = icone.querySelector('i');
+            if (iconElemento) {
+                // Animação de fade out do cadeado
+                iconElemento.style.transition = 'all 0.3s ease';
+                iconElemento.style.opacity = '0';
+                iconElemento.style.transform = 'scale(0.5) rotate(180deg)';
+                
+                setTimeout(() => {
+                    // Troca o ícone baseado no número do módulo
+                    const novosIcones = {
+                        2: 'fa-code', // HTML & CSS
+                        3: 'fa-brands fa-square-js', // JavaScript
+                        4: 'fa-code-branch', // Git
+                        5: 'fa-mobile-alt', // Design Responsivo
+                        6: 'fa-project-diagram' // Projeto Prático
+                    };
+                    
+                    // Define o novo ícone ou usa o padrão
+                    const novoIcone = novosIcones[proximoNumero] || 'fa-book-open';
+                    iconElemento.className = `fas ${novoIcone}`;
+                    
+                    // Animação de fade in do novo ícone
+                    iconElemento.style.opacity = '0';
+                    iconElemento.style.transform = 'scale(0.5) rotate(-180deg)';
+                    
+                    setTimeout(() => {
+                        iconElemento.style.opacity = '1';
+                        iconElemento.style.transform = 'scale(1) rotate(0deg)';
+                    }, 50);
+                }, 300);
+            }
+            
+            // Remove classe de animação após completar
+            setTimeout(() => {
+                icone.classList.remove('desbloqueando');
+            }, 600);
+            
+            // Atualiza o botão "Continuar Aprendendo"
+            atualizarTextoBotaoContinuar();
+        }, 1500);
+    }
+}
