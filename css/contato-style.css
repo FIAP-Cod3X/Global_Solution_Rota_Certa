@@ -1,0 +1,820 @@
+/* ===================================
+   PÁGINA DE CONTATO
+   =================================== */
+
+/* Hero Contato */
+.hero-contato {
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, var(--cor-azul-petroleo) 0%, #1a5870 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-contato::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: flutuarFundo 20s ease-in-out infinite;
+}
+
+.hero-contato-conteudo {
+    text-align: center;
+    color: var(--cor-branco);
+    position: relative;
+    z-index: 1;
+}
+
+.badge-hero-contato {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: var(--borda-radius-completo);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 24px;
+}
+
+.badge-hero-contato i {
+    font-size: 1.2rem;
+    color: var(--cor-laranja-coral);
+}
+
+.titulo-hero-contato {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.subtitulo-hero-contato {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+/* Seção Cards de Contato */
+.secao-cards-contato {
+    padding: var(--espacamento-enorme) 0;
+    background: linear-gradient(180deg, #f5f7fa 0%, var(--cor-branco) 100%);
+}
+
+.titulo-secao-centro {
+    text-align: center;
+    font-size: var(--titulo-grande);
+    font-weight: 800;
+    color: var(--cor-azul-petroleo);
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grid-cards-contato {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-contato {
+    background: var(--cor-branco);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.card-contato:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card-contato:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.card-contato:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.card-contato:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    border-color: rgba(13, 71, 90, 0.1);
+}
+
+.card-contato:hover::before {
+    transform: scaleX(1);
+}
+
+.card-destaque {
+    border: 2px solid var(--cor-verde-menta);
+    background: linear-gradient(135deg, rgba(115, 230, 166, 0.05), var(--cor-branco));
+}
+
+.card-destaque:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-verde-menta);
+}
+
+.badge-rapido {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--cor-verde-menta);
+    color: var(--cor-branco);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: badgePulse 3s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(115, 230, 166, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(115, 230, 166, 0);
+    }
+}
+
+.badge-rapido i {
+    font-size: 0.85rem;
+    animation: badgeBolt 1.5s ease-in-out infinite;
+}
+
+@keyframes badgeBolt {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.icone-card-contato {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--cor-azul-petroleo), #1a5870);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: var(--cor-branco);
+    margin: 0 auto 24px;
+    box-shadow: 0 4px 15px rgba(13, 71, 90, 0.25);
+    transition: all 0.3s ease;
+}
+
+.card-contato:hover .icone-card-contato {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(13, 71, 90, 0.35);
+}
+
+.icone-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.card-contato h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cor-azul-petroleo);
+    margin-bottom: 12px;
+}
+
+.descricao-card {
+    color: var(--cor-cinza-escuro);
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.info-contato-item {
+    margin-bottom: 20px;
+}
+
+.label-info {
+    display: block;
+    font-weight: 600;
+    color: var(--cor-azul-petroleo);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.link-contato {
+    display: inline-block;
+    color: var(--cor-laranja-coral);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+
+.link-contato:hover {
+    color: var(--cor-azul-petroleo);
+}
+
+
+.texto-info {
+    color: var(--cor-cinza-escuro);
+    line-height: 1.6;
+}
+
+.botao-card-contato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 28px;
+    background: var(--cor-azul-petroleo);
+    color: var(--cor-branco);
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.botao-card-contato:hover {
+    transform: translateY(-3px);
+    scale: 1.03;
+    color: var(--cor-branco);
+}
+
+.botao-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+/* Seção Como Chegar */
+.secao-como-chegar {
+    padding: var(--espacamento-enorme) 0;
+    background: var(--cor-branco);
+}
+
+.titulo-secao-como-chegar {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titulo-secao-como-chegar h2 {
+    font-size: var(--titulo-grande);
+    font-weight: 800;
+    color: var(--cor-azul-petroleo);
+    margin-bottom: 16px;
+}
+
+.titulo-secao-como-chegar p {
+    font-size: 1.1rem;
+    color: var(--cor-cinza-escuro);
+}
+
+/* Mapa em Destaque */
+.mapa-destaque {
+    max-width: 1400px;
+    margin: 0 auto 80px;
+    background: var(--cor-branco);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+    border: 2px solid rgba(13, 71, 90, 0.08);
+}
+
+.mapa-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.mapa-container iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.info-endereco-mapa {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 40px;
+    background: linear-gradient(135deg, #f8f9fa, var(--cor-branco));
+    border-top: 3px solid var(--cor-laranja-coral);
+}
+
+.icone-endereco {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--cor-laranja-coral), #ff8866);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--cor-branco);
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(255, 107, 74, 0.3);
+}
+
+.texto-endereco {
+    flex: 1;
+}
+
+.texto-endereco strong {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--cor-azul-petroleo);
+    margin-bottom: 6px;
+}
+
+.texto-endereco p {
+    color: var(--cor-cinza-escuro);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.botao-rotas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, var(--cor-azul-petroleo), #1a5870);
+    color: var(--cor-branco);
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transicao-normal);
+    white-space: nowrap;
+}
+
+.botao-rotas:hover {
+    transform: translateY(-2px);
+    scale: 1.02;
+    box-shadow: 0 4px 20px rgba(13, 71, 90, 0.3);
+    color: var(--cor-branco);
+}
+
+/* Grid de Trajetos */
+.grid-trajetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.bloco-trajeto {
+    background: var(--cor-branco);
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(13, 71, 90, 0.05);
+    transition: all var(--transicao-normal);
+}
+
+.bloco-trajeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.titulo-bloco-trajeto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.titulo-bloco-trajeto i {
+    font-size: 1.6rem;
+    color: var(--cor-azul-petroleo);
+}
+
+.titulo-bloco-trajeto h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cor-azul-petroleo);
+}
+
+/* Opções de Trajeto */
+.lista-opcoes-trajeto {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.opcao-trajeto {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.badge-transporte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 12px;
+    border-radius: var(--borda-radius-medio);
+    min-width: 70px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--cor-branco);
+    flex-shrink: 0;
+}
+
+.badge-metro {
+    background: linear-gradient(135deg, #00a859, #008844);
+}
+
+.badge-onibus {
+    background: linear-gradient(135deg, var(--cor-laranja-coral), #ff8866);
+}
+
+.badge-transporte i {
+    font-size: 1.6rem;
+}
+
+.info-opcao {
+    flex: 1;
+}
+
+.info-opcao strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--cor-azul-petroleo);
+    margin-bottom: 4px;
+}
+
+.info-opcao p {
+    color: var(--cor-cinza-escuro);
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.distancia {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(115, 230, 166, 0.15);
+    color: var(--cor-azul-petroleo);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Pontos de Referência */
+.lista-referencias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-referencia {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.item-referencia i {
+    font-size: 1.6rem;
+    color: var(--cor-laranja-coral);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.item-referencia strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--cor-azul-petroleo);
+    margin-bottom: 4px;
+}
+
+.item-referencia p {
+    color: var(--cor-cinza-escuro);
+    font-size: 0.95rem;
+}
+
+/* De Carro */
+.info-carro {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.item-info-carro {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.item-info-carro i {
+    font-size: 1.6rem;
+    color: var(--cor-azul-petroleo);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.item-info-carro strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--cor-azul-petroleo);
+    margin-bottom: 6px;
+}
+
+.item-info-carro p {
+    color: var(--cor-cinza-escuro);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.dica-trajeto {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(255, 107, 74, 0.1), rgba(115, 230, 166, 0.1));
+    border-radius: var(--borda-radius-medio);
+    border-left: 4px solid var(--cor-laranja-coral);
+}
+
+.dica-trajeto i {
+    font-size: 1.3rem;
+    color: var(--cor-laranja-coral);
+    flex-shrink: 0;
+}
+
+.dica-trajeto p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--cor-azul-petroleo);
+    line-height: 1.6;
+}
+
+.dica-trajeto strong {
+    font-weight: 700;
+}
+
+/* CTA Final */
+.cta-final-contato {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--cor-azul-petroleo) 0%, #1a5870 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-final-contato::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: flutuarFundo 15s ease-in-out infinite;
+}
+
+.cta-contato-conteudo {
+    text-align: center;
+    color: var(--cor-branco);
+    position: relative;
+    z-index: 1;
+}
+
+.icone-cta-grande {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 3rem;
+    color: var(--cor-laranja-coral);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    animation: pulsoSucesso 2s ease-in-out infinite;
+}
+
+.cta-contato-conteudo h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.destaque-gradient {
+    background: linear-gradient(135deg, var(--cor-laranja-coral), var(--cor-verde-menta));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-contato-conteudo p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.95;
+}
+
+.botoes-cta-contato {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.botao-whatsapp-grande,
+.botao-secundario-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    border-radius: var(--borda-radius-medio);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all var(--transicao-normal);
+}
+
+.botao-whatsapp-grande {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: var(--cor-branco);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+}
+
+.botao-whatsapp-grande:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+}
+
+.botao-secundario-cta {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: var(--cor-branco);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.botao-secundario-cta:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .grid-cards-contato,
+    .grid-trajetos {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .card-destaque {
+        transform: scale(1);
+    }
+    
+    .card-destaque:hover {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-hero-contato {
+        font-size: var(--titulo-grande);
+    }
+    
+    .subtitulo-hero-contato {
+        font-size: 1.1rem;
+    }
+    
+    .titulo-secao-centro,
+    .titulo-secao-como-chegar h2 {
+        font-size: var(--titulo-medio);
+    }
+    
+    .mapa-container {
+        height: 350px;
+    }
+    
+    .info-endereco-mapa {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .botao-rotas {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .botoes-cta-contato {
+        flex-direction: column;
+    }
+    
+    .botao-whatsapp-grande,
+    .botao-secundario-cta {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-contato {
+        padding: 120px 0 60px;
+    }
+    
+    .titulo-hero-contato {
+        font-size: var(--titulo-medio);
+    }
+    
+    .subtitulo-hero-contato {
+        font-size: var(--texto-normal);
+    }
+    
+    .badge-hero-contato {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+    }
+    
+    .card-contato {
+        padding: 30px 20px;
+    }
+    
+    .icone-card-contato {
+        width: 70px;
+        height: 70px;
+        font-size: var(--titulo-medio);
+    }
+    
+    .titulo-secao-centro,
+    .titulo-secao-como-chegar h2 {
+        font-size: 1.75rem;
+    }
+    
+    .mapa-container {
+        height: 300px;
+    }
+    
+    .bloco-trajeto {
+        padding: 25px 20px;
+    }
+    
+    .cta-contato-conteudo h2 {
+        font-size: var(--titulo-medio);
+    }
+    
+    .icone-cta-grande {
+        width: 80px;
+        height: 80px;
+        font-size: var(--titulo-grande);
+    }
+
+    .popup-email {
+        font-size: 0.750rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .badge-rapido{
+        display: none;
+    }
+}
