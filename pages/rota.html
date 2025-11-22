@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- ============================================
+         META TAGS - Configurações essenciais do documento
+         ============================================ -->
+    
+    <!-- Charset UTF-8: Define codificação de caracteres para suportar acentos e caracteres especiais -->
+    <meta charset="UTF-8">
+    
+    <!-- Viewport: Essencial para responsividade - controla como a página é renderizada em diferentes dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Description: Importante para SEO - aparece nos resultados de busca do Google -->
+    <meta name="description" content="Descubra sua rota de requalificação profissional através do nosso questionário inteligente.">
+    
+    <!-- Keywords: Palavras-chave para SEO -->
+    <meta name="keywords" content="questionário profissional, requalificação, transição de carreira, análise de perfil, orientação profissional">
+    
+    <!-- Author: Identificação dos criadores -->
+    <meta name="author" content="Equipe Rota Certa - FIAP">
+    
+    <!-- ============================================
+         TÍTULO DA PÁGINA
+         ============================================ -->
+    <title>Descobrir Minha Rota - Rota Certa</title>
+    
+    <!-- ============================================
+         FAVICON - Ícone da Aba do Navegador
+         ============================================ -->
+    <!-- Favicon SVG: Suporta modo claro/escuro e é escalável -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+    
+    <!-- Fallback PNG para navegadores antigos -->
+    <link rel="alternate icon" type="image/png" href="../assets/logo.ico">
+    
+    <!-- ============================================
+         FONTES EXTERNAS - Google Fonts
+         ============================================ -->
+    <!-- Preconnect: Estabelece conexão prévia com o servidor para carregar fontes mais rápido -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Importação das fontes Poppins (títulos) e Open Sans (textos) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- ============================================
+         ÍCONES - Font Awesome CDN
+         ============================================ -->
+    <!-- Font Awesome: Biblioteca de ícones vetoriais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- ============================================
+         FOLHAS DE ESTILO CSS
+         ============================================ -->
+    <!-- style.css: Estilos globais e componentes compartilhados -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- rota-style.css: Estilos específicos da página de questionário -->
+    <link rel="stylesheet" href="../css/rota-style.css">
+    
+    <!-- ============================================
+         SCRIPTS JAVASCRIPT
+         ============================================ -->
+    <script src="../js/menu.js" defer></script>
+    <script src="../js/rota.js" defer></script>
+    <script src="../js/geral.js" defer></script>
+    
+</head>
+<body>
+    
+    <!-- ============================================
+         HEADER - Cabeçalho com Navegação Principal
+         ============================================
+         Elemento semântico <header> contém a identidade da marca
+         e o menu de navegação principal do site.
+         Position: sticky mantém o header visível ao rolar.
+         ============================================ -->
+    <header class="cabecalho" role="banner">
+        
+        <!-- NAV: Contêiner de navegação principal -->
+        <nav class="navegacao-principal" role="navigation" aria-label="Menu principal">
+            <div class="container">
+                
+                <!-- LOGO: Identidade visual da marca -->
+                <div class="logo">
+                    <!-- Link para página inicial com atributo aria-label para acessibilidade -->
+                    <a href="../index.html" aria-label="RotaCerta - GPS da Requalificação Profissional" title="Voltar para página inicial">
+                        <!-- Ícone de rota (Font Awesome) -->
+                        <i class="fas fa-route icone-logo" aria-hidden="true"></i>
+                        
+                        <!-- Texto da logo com cores distintas -->
+                        <span class="texto-logo">
+                            <span class="texto-rota">Rota</span><span class="texto-certa">Certa</span>
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- BOTÃO MENU MOBILE: Hambúrguer para telas pequenas -->
+                <!-- Controlado via JavaScript (menu.js) -->
+                <button 
+                    class="botao-menu" 
+                    id="botaoMenu" 
+                    type="button"
+                    aria-label="Abrir menu de navegação" 
+                    aria-expanded="false"
+                    aria-controls="menuNavegacao">
+                    <!-- Três linhas que formam o ícone hambúrguer -->
+                    <span class="linha-menu" aria-hidden="true"></span>
+                    <span class="linha-menu" aria-hidden="true"></span>
+                    <span class="linha-menu" aria-hidden="true"></span>
+                </button>
+                
+                <!-- MENU DE NAVEGAÇÃO: Lista de links principais -->
+                <!-- Escondido no mobile, visível no desktop -->
+                <ul class="menu-navegacao" id="menuNavegacao" role="menubar">
+                    <li role="none">
+                        <a href="../index.html" role="menuitem">Início</a>
+                    </li>
+                    <li role="none">
+                        <a href="./sobre.html" role="menuitem">Sobre</a>
+                    </li>
+                    <li role="none">
+                        <a href="./faq.html" role="menuitem">Perguntas</a>
+                    </li>
+                    <li role="none">
+                        <a href="./integrantes.html" role="menuitem">Equipe</a>
+                    </li>
+                    <li role="none">
+                        <a href="./contato.html" role="menuitem">Contato</a>
+                    </li>
+                    <li role="none">
+                        <a href="./aprendizado.html" role="menuitem">Aprendizado</a>
+                    </li>
+                </ul>
+                
+                <!-- CTA BUTTON: Call-to-Action principal do header -->
+                <!-- Visível apenas em desktop (display: none no mobile via CSS) -->
+                <a 
+                    href="#etapa-1" 
+                    class="botao-principal botao-cabecalho"
+                    role="button"
+                    aria-label="Começar questionário de requalificação">
+                    Começar Questionário
+                </a>
+                
+            </div>
+        </nav>
+        
+    </header>
+    <!-- FIM DO HEADER -->
+    
+    <!-- ============================================
+         MAIN - Conteúdo Principal da Página
+         ============================================
+         Elemento semântico <main> contém o conteúdo principal
+         único desta página. Deve haver apenas um <main> por página.
+         ============================================ -->
+    <main id="conteudo-principal" role="main">
+        
+    </main>
+    <!-- FIM DO MAIN -->
+    
+    <!-- ============================================
+         FOOTER - Rodapé com Links e Informações
+         ============================================
+         Elemento semântico <footer> contém informações
+         complementares, links de navegação secundária,
+         formulário de newsletter e copyright.
+         Layout: Grid responsivo (1-2-4 colunas)
+         ============================================ -->
+    <footer class="rodape" role="contentinfo">
+        <div class="container">
+            
+            <!-- GRID DE COLUNAS: Responsivo -->
+            <div class="conteudo-rodape">
+                
+                <!-- ========================================
+                     COLUNA 1: Sobre o Projeto
+                     ======================================== -->
+                <div class="coluna-rodape coluna-principal">
+                    
+                    <!-- Logo no rodapé (mesma da header) -->
+                    <div class="logo-rodape" aria-label="Logo Rota Certa">
+                        <i class="fas fa-route icone-logo-rodape" aria-hidden="true"></i>
+                        <span class="texto-logo-rodape">
+                            <span class="texto-rota">Rota</span><span class="texto-certa">Certa</span>
+                        </span>
+                    </div>
+                    
+                    <!-- Descrição resumida do projeto -->
+                    <p class="texto-rodape">
+                        O GPS da Requalificação Profissional. Ajudando trabalhadores 
+                        a encontrarem seu caminho na era da automação.
+                    </p>
+                    
+                </div>
+                
+                <!-- ========================================
+                     COLUNA 2: Links Rápidos
+                     ======================================== -->
+                <div class="coluna-rodape">
+                    <h4 class="subtitulo-rodape">Links Rápidos</h4>
+                    <!-- Lista de navegação secundária -->
+                    <ul class="lista-rodape" role="list">
+                        <li><a href="./sobre.html">Sobre Nós</a></li>
+                        <li><a href="./faq.html">Perguntas Frequentes</a></li>
+                        <li><a href="./integrantes.html">Nossa Equipe</a></li>
+                        <li><a href="./contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <!-- ========================================
+                     COLUNA 3: Recursos e Ferramentas
+                     ======================================== -->
+                <div class="coluna-rodape">
+                    <h4 class="subtitulo-rodape">Recursos</h4>
+                    <!-- Links para âncoras da página inicial -->
+                    <ul class="lista-rodape" role="list">
+                        <li><a href="#formularioRota">Formulário</a></li>
+                        <li><a href="../index.html#diagnostico">Diagnóstico rápido</a></li>
+                        <li><a href="https://github.com/FIAP-Cod3X" target="_blank">Organização GitHub</a></li>
+                    </ul>
+                </div>
+                
+                <!-- ========================================
+                     COLUNA 4: Newsletter
+                     ======================================== -->
+                <div class="coluna-rodape">
+                    <h4 class="subtitulo-rodape">Fique por Dentro</h4>
+                    <p class="texto-rodape-pequeno">Receba novidades sobre sua carreira.</p>
+                    
+                    <!-- Formulário de inscrição -->
+                    <form 
+                        class="formulario-newsletter" 
+                        aria-label="Formulário de inscrição na newsletter">
+                        <input 
+                            type="email" 
+                            id="newsletter-email"
+                            placeholder="seu@email.com" 
+                            class="campo-newsletter" 
+                            required
+                            aria-label="Digite seu e-mail">
+                        <button 
+                            type="submit" 
+                            class="botao-newsletter"
+                            aria-label="Inscrever-se na newsletter">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+            
+            <!-- ========================================
+                 BARRA INFERIOR: Copyright
+                 ======================================== -->
+            <div class="rodape-inferior">
+                <p class="texto-copyright">
+                    <small>
+                        &copy; 2025 Rota Certa - GPS da Requalificação Profissional. 
+                        Todos os direitos reservados.
+                    </small>
+                </p>
+            </div>
+            
+        </div>
+    </footer>
+    <!-- FIM DO FOOTER -->
+    
+    <!-- ============================================
+         BOTÃO VOLTAR AO TOPO
+         ============================================
+         Botão flutuante que aparece ao rolar a página
+         para permitir retorno rápido ao topo.
+         Controlado via JavaScript (geral.js).
+         ============================================ -->
+    <button class="botao-voltar-topo" aria-label="Voltar ao topo" title="Voltar ao topo">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    
+</body>
+</html>
