@@ -272,7 +272,66 @@
         </div>
     </section>
     <!-- FIM DA SEÇÃO HERO -->
-  
+    
+    <!-- ============================================
+         SEÇÃO FILTROS E ABAS - Navegação de Cursos
+         ============================================
+         Sistema de tabs para alternar entre diferentes
+         visualizações (Trilha, Todos, Em Andamento, Concluídos)
+         + Filtros por categoria, nível e busca textual.
+         Controlado via JavaScript (aprendizado.js)
+         ============================================ -->
+    <section class="secao-filtros" id="filtros" aria-label="Filtros de cursos">
+        <div class="container">
+            <div class="filtros-wrapper">
+                
+                <!-- ABAS DE NAVEGAÇÃO: Sistema de tabs -->
+                <!-- Permite alternar entre diferentes visualizações -->
+                <div class="abas-aprendizado" role="tablist" aria-label="Visualizações de cursos">
+                    <button class="aba-aprendizado ativo" data-aba="trilha" role="tab" aria-selected="true">
+                        <i class="fas fa-route"></i> Minha Trilha
+                    </button>
+                    <button class="aba-aprendizado" data-aba="todos" role="tab" aria-selected="false">
+                        <i class="fas fa-layer-group"></i> Todos os Cursos
+                    </button>
+                    <button class="aba-aprendizado" data-aba="em-andamento" role="tab" aria-selected="false">
+                        <i class="fas fa-play-circle"></i> Em Andamento
+                    </button>
+                    <button class="aba-aprendizado" data-aba="concluidos" role="tab" aria-selected="false">
+                        <i class="fas fa-check-circle"></i> Concluídos
+                    </button>
+                </div>
+                
+                <!-- Filtros e Busca -->
+                <div class="filtros-busca">
+                    <div class="campo-busca">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="campoBusca" placeholder="Buscar cursos..." aria-label="Buscar cursos">
+                    </div>
+                    
+                    <select class="select-filtro" id="filtroCategoria" aria-label="Filtrar por categoria">
+                        <option value="">Todas as Categorias</option>
+                        <option value="fundamentos">Fundamentos</option>
+                        <option value="frontend">Front-End</option>
+                        <option value="backend">Back-End</option>
+                        <option value="dados">Dados & IA</option>
+                        <option value="design">Design UX/UI</option>
+                        <option value="softskills">Soft Skills</option>
+                    </select>
+                    
+                    <select class="select-filtro" id="filtroNivel" aria-label="Filtrar por nível">
+                        <option value="">Todos os Níveis</option>
+                        <option value="iniciante">Iniciante</option>
+                        <option value="intermediario">Intermediário</option>
+                        <option value="avancado">Avançado</option>
+                    </select>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- FIM DA SEÇÃO FILTROS -->
+   
     </main>
     <!-- FIM DO MAIN -->
     
